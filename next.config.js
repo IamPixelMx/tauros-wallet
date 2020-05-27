@@ -7,72 +7,31 @@ const path = require('path');
 require('dotenv').config();
 
 const nextConfig = {
-  // Workbox Options
+  /*
+   * Workbox Options
+   */
   workboxOpts: {
     clientsClaim: true,
     skipWaiting: true,
     swDest: path.join(__dirname, 'public/service-worker.js'),
-
-    // runtimeCaching: [
-    //   {
-    //     urlPattern: /^https?.*/,
-    //     handler: 'NetworkFirst',
-    //     options: {
-    //       cacheName: 'OfflineCache',
-    //       expiration: {
-    //         maxEntries: 200,
-    //       },
-    //     },
-    //   },
-    //   {
-    //     urlPattern: new RegExp(`^${BASE_URL}`),
-    //     handler: 'StaleWhileRevalidate',
-    //     options: {
-    //       cacheName: 'api-cache',
-    //       cacheableResponse: {
-    //         statuses: [0, 200],
-    //         headers: {
-    //           'x-test': 'true',
-    //         },
-    //       },
-    //     },
-    //   },
-    //   {
-    //     urlPattern: /.*\.(?:png|jpg|jpeg|svg|gif)/,
-    //     handler: 'CacheFirst',
-    //   },
-    //   {
-    //     urlPattern: /(results | question)/,
-    //     handler: 'NetworkFirst',
-    //     options: {
-    //       cacheableResponse: {
-    //         statuses: [0, 200],
-    //         headers: {
-    //           'x-test': 'true',
-    //         },
-    //       },
-    //     },
-    //   },
-    // ],
   },
 
+  /*
+   * Webpack configuration
+   */
   webpack(config) {
     // Fixes npm packages that depend on `fs` module
     config.node = {
       fs: 'empty',
     };
 
-    /*
-     * Config for importing svgs
-     */
+    // Config for importing svg
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
 
-    /*
-     * Returns environment variables as an object
-     */
+    // Build objectwith environment variables
     const env = Object.keys(process.env).reduce((acc, curr) => {
       acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
       return acc;
@@ -82,7 +41,6 @@ const nextConfig = {
      * Allows you to create global constants which can be configured
      * at compile time, like our environment variables
      */
-
     config.plugins.push(new webpack.DefinePlugin(env));
 
     // Now let's build our manifest
@@ -135,29 +93,3 @@ const nextConfig = {
 };
 
 module.exports = withPlugins([[withCSS], [withOffline]], nextConfig);
-
-// module.exports = {
-//   webpack: config => {
-//     /*
-//      * Config for importing svgs
-//      */
-//     config.module.rules.push({
-//       test: /\.svg$/,
-//       use: ['@svgr/webpack'],
-//     });
-//     /*
-//      * Returns environment variables as an object
-//      */
-//     const env = Object.keys(process.env).reduce((acc, curr) => {
-//       acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
-//       return acc;
-//     }, {});
-
-//     /*
-//      * Allows you to create global constants which can be configured
-//      * at compile time, like our environment variables
-//      */
-//     config.plugins.push(new webpack.DefinePlugin(env));
-//     return config;
-//   },
-// };

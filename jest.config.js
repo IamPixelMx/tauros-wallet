@@ -8,7 +8,6 @@ module.exports = {
     '\\.svg$': '<rootDir>/__mocks__/svgrMock.js',
     '^components(.*)$': '<rootDir>/components$1',
     '^pages(.*)$': '<rootDir>/pages$1',
-    '^assets(.*)$': '<rootDir>/public$1',
     '^redux(.*)$': '<rootDir>/redux$1',
     '^utils(.*)$': '<rootDir>/utils$1',
     '^jest-factories(.*)$': `<rootDir>/jest/factories$1`,
