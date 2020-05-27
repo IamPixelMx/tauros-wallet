@@ -11,6 +11,7 @@ import {
   OrientalIcon,
 } from './Icons';
 import { Layout } from './Layout';
+import { LinkButton } from './LinkButton';
 import { Loader } from './Loader';
 import { Navbar } from './Navbar';
 import { Splash } from './Splash';
@@ -26,8 +27,9 @@ export {
   ShareCircleIcon,
   ShareIcon,
   OrientalIcon,
-  Loader,
   Layout,
+  LinkButton,
+  Loader,
   Footer,
   Navbar,
   Splash,

@@ -89,9 +89,6 @@ export const buildGlobalStyles = theme => css`
   .has-padding-top {
     padding-top: 7.2rem;
   }
-  .has-margin-top {
-    margin-top: 2.5rem;
-  }
   .has-lg-margin-top {
     margin-top: 4.5rem;
   }
@@ -102,7 +99,6 @@ export const buildGlobalStyles = theme => css`
   .is-vertical-align {
     vertical-align: middle;
   }
-
   a.navbar-item.is-active,
   .navbar-dropdown a.navbar-item.is-active,
   .navbar-dropdown a.navbar-item:hover {

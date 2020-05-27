@@ -24,7 +24,7 @@ const Navbar = props => {
       <div className='container'>
         <div className='navbar-brand'>
           <Link href='/'>
-            <figure className='image is-128x128 nav-logo'>
+            <figure className='image is-128x128'>
               <img src='/logo.png' alt='logo' />
             </figure>
           </Link>
@@ -33,9 +33,9 @@ const Navbar = props => {
             data-target='navbarMenuHeroB'
             onClick={toggle}
           >
-            <span className='is-nice-blue'></span>
-            <span className='is-nice-blue'></span>
-            <span className='is-nice-blue'></span>
+            <span></span>
+            <span></span>
+            <span></span>
           </span>
         </div>
         <div className={isNavOpen ? 'navbar-menu is-active' : 'navbar-menu'} id='navbarMenuHeroB'>
@@ -44,7 +44,7 @@ const Navbar = props => {
             <NavbarItem {...NAV_ITEMS[1]} {...props} />
             <div className='navbar-item has-dropdown is-hoverable'>
               <hr className='navbar-divider' />
-              <a className='navbar-link is-nice-blue'>Comida</a>
+              <a className='navbar-link'>Comida</a>
               <div className='navbar-dropdown is-boxed is-right'>
                 <NavbarItem {...NAV_ITEMS[2]} {...props} />
                 <NavbarItem {...NAV_ITEMS[3]} {...props} />
@@ -55,20 +55,6 @@ const Navbar = props => {
           </div>
         </div>
       </div>
-      <style jsx>
-        {`
-          .nav-logo img {
-            width: 6.5rem;
-            height: auto;
-            cursor: pointer;
-          }
-          @media (max-width: 1023px) {
-            .navbar-menu {
-              height: 100vh;
-            }
-          }
-        `}
-      </style>
     </nav>
   );
 };

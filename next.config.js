@@ -36,7 +36,6 @@ const nextConfig = {
       acc[`process.env.${curr}`] = JSON.stringify(process.env[curr]);
       return acc;
     }, {});
-
     /*
      * Allows you to create global constants which can be configured
      * at compile time, like our environment variables
