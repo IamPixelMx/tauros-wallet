@@ -1,5 +1,5 @@
 import { runSaga } from 'redux-saga';
-import initialState from 'local-redux/initialState';
+import initialState from 'redux/initialState';
 
 export async function recordSaga(saga, initialAction) {
   const dispatched = [];

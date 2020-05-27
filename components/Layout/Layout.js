@@ -37,7 +37,7 @@ const Layout = ({ children, dispatch }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  dispatch: PropTypesfunc.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default connect()(Layout);

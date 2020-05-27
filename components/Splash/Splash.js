@@ -1,26 +1,11 @@
-import PropTypes from 'prop-types';
+import { SplashStyled, SplashLogoStyled } from './styles';
 
-const Splash = ({ isLoaded }) => (
-  <div id='splash' className={isLoaded ? ' splash view hide' : ' splash view'}>
-    <figure className='level-item image splash-logo'>
+const Splash = () => (
+  <SplashStyled id='splash'>
+    <SplashLogoStyled className='level-item image'>
       <img src='/logo.png' alt='logo-splash' />
-    </figure>
-    <style jsx>
-      {`
-        .splash {
-          padding-top: 15vh;
-        }
-        .splash-logo img {
-          width: 15rem;
-          height: auto;
-        }
-      `}
-    </style>
-  </div>
+    </SplashLogoStyled>
+  </SplashStyled>
 );
-
-Splash.propTypes = {
-  isLoaded: PropTypes.bool.isRequired,
-};
 
 export default Splash;

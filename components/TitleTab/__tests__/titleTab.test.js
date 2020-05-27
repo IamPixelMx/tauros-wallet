@@ -2,7 +2,7 @@ import React from 'react';
 import { TitleTab } from 'components';
 import HeadManager from 'next/dist/client/head-manager';
 import { HeadManagerContext } from 'next/dist/next-server/lib/head-manager-context';
-import { render, wait } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 
 describe('TitleTab', () => {
   it('Should change the document title from tab', async () => {
@@ -16,6 +16,6 @@ describe('TitleTab', () => {
       </HeadManagerContext.Provider>,
     );
 
-    await wait(() => expect(document.title).toEqual('Home'));
+    await waitFor(() => expect(document.title).toEqual('Home'));
   });
 });

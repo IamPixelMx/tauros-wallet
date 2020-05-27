@@ -17,7 +17,6 @@ module.exports = {
     '^models(.*)$': '<rootDir>/redux/models$1',
     '^reducers(.*)$': '<rootDir>/redux/reducers$1',
     '^sagas(.*)$': '<rootDir>/redux/sagas$1',
-    '^selectors(.*)$': '<rootDir>/redux/selectors$1',
     '^api(.*)$': '<rootDir>/redux/sagas/api$1',
   },
   collectCoverageFrom: [

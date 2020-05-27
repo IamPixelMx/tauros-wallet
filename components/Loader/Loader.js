@@ -1,21 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { IconStyled, LoaderStyled, LoaderIconsStyled } from './styles';
-import { MelpIcon } from 'components';
+import { SaladIcon, OrientalIcon } from 'components';
 
 const IconSize = {
-  width: '5rem',
-  height: '5rem',
+  width: '25rem',
+  height: '25rem',
 };
 
 const Loader = ({ isFullScreen, customHeight }) => (
   <LoaderStyled isFullScreen={isFullScreen} customHeight={customHeight}>
     <LoaderIconsStyled>
       <IconStyled>
-        <MelpIcon {...IconSize} />
+        <SaladIcon {...IconSize} />
       </IconStyled>
       <IconStyled>
-        <MelpIcon {...IconSize} />
+        <OrientalIcon {...IconSize} />
       </IconStyled>
     </LoaderIconsStyled>
   </LoaderStyled>
