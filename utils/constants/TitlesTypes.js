@@ -6,7 +6,6 @@ const titles = {
   '/mapa': ' Melp | Mapa',
   '/oriental': ' Melp | Oriental',
   '/postres': ' Melp | Postres',
-  '/restaurantes': ' Melp | Restaurantes',
   '/vegetariano': 'Melp | Vegetariano',
 };
 

@@ -1,3 +1,4 @@
 import GlobalStyles from './GlobalStyles';
+import theme from './theme';
 
-export { GlobalStyles };
+export { GlobalStyles, theme };

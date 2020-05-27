@@ -4,7 +4,6 @@ const root = path.resolve(__dirname);
 const alias = {
   actions: `${root}/redux/actions`,
   api: `${root}/redux/sagas/api`,
-  assets: `${root}/public`,
   components: `${root}/components`,
   constants: `${root}/utils/constants`,
   models: `${root}/redux/models`,

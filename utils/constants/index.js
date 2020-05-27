@@ -18,8 +18,7 @@ import {
   UPDATE_REPOS_LIST_SUCCESS,
 } from './ActionTypes';
 
-import theme from './theme';
-import titles from './titles';
+import TITLES from './TitlesTypes';
 
 export {
   CLEAN_REPOS_MATCH,
@@ -40,6 +39,5 @@ export {
   UPDATE_REPOS_LIST_SUCCESS,
   SEARCH_BASE_URL,
   USERS_BASE_URL,
-  theme,
-  titles,
+  TITLES,
 };

@@ -8,13 +8,7 @@ module.exports = {
     node: true,
   },
   extends: ['airbnb/hooks', 'eslint-config-prettier', 'prettier'],
-  plugins: [
-    'fp', // https://github.com/jfmengels/eslint-plugin-fp/tree/master/docs/rules
-    'prettier',
-    'react',
-    'react-hooks',
-    'jsx-a11y',
-  ],
+  plugins: ['fp', 'prettier', 'react', 'react-hooks', 'jsx-a11y'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',

@@ -1,35 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { connect } from 'react-redux';
 
 // import { cleanUsersMatch } from "../store/actions/users-actions";
 // import { cleanReposMatch } from "../store/actions/repositories-actions";
-import { Loader } from 'components';
+import { Loader, Navbar } from 'components';
 
 const Layout = ({ children, dispatch }) => {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     Router.onRouteChangeStart = () => {
-      // const { dispatch } = this.props;
       // dispatch(cleanUsersMatch());
       // dispatch(cleanReposMatch());
       setIsLoading(true);
-      console.log('empezo');
     };
     Router.onRouteChangeComplete = () => {
       setIsLoading(false);
-      console.log('completo');
     };
     Router.onRouteChangeError = () => {
       setIsLoading(false);
-      console.log('error');
     };
   });
 
   return (
-    <main id='main' className='has-padding-top section view'>
+    <main id='main' className='has-padding-top section'>
+      <Navbar activeRoute={router.pathname} />
       {isLoading ? <Loader isFullScreen /> : children}
     </main>
   );

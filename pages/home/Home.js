@@ -7,12 +7,15 @@ import { Layout, Splash } from 'components';
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
+  /*
+   * Use 'useEffect' to manage Splash effect
+   */
   useEffect(() => {
     handleLoad();
   }, []);
 
+  // Function to disable Splash once the page is loaded
   const handleLoad = () => {
-    // Manejo de Splash
     setTimeout(setIsLoaded(true), 1100);
   };
 

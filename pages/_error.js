@@ -29,7 +29,7 @@ ErrorPage.getInitialProps = ({ res, err }) => {
 };
 
 ErrorPage.defaultProps = {
-  statusCode: 200,
+  statusCode: 404,
 };
 
 ErrorPage.propTypes = {
