@@ -6,12 +6,13 @@ import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
 // Configfuration for redux store
 import configureStore from 'store/configureStore';
-
+// Bulma CSS
+import 'bulma/css/bulma.min.css';
 // Emotion CSS
 import { ThemeProvider } from 'emotion-theming';
 import { GlobalStyles, theme } from 'styles';
 
-// import { TitleTab } from 'components';
+import { TitleTab } from 'components';
 
 class TaurosWallet extends App {
   render() {
@@ -19,7 +20,7 @@ class TaurosWallet extends App {
 
     return (
       <Provider store={store}>
-        {/* <TitleTab /> */}
+        <TitleTab />
         <ThemeProvider theme={theme}>
           <GlobalStyles />
           <Component {...pageProps} />

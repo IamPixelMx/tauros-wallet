@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Router, { useRouter } from 'next/router';
-import { connect } from 'react-redux';
 
 import { Loader, Navbar } from 'components';
 
@@ -23,15 +22,14 @@ const Layout = ({ children }) => {
 
   return (
     <main id='main'>
-      <Navbar activeRoute={router.pathname} />
+      <Navbar />
       {isLoading ? <Loader isFullScreen /> : children}
     </main>
   );
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-  dispatch: PropTypes.func.isRequired,
+  children: PropTypes.node,
 };
 
-export default connect()(Layout);
+export default Layout;

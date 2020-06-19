@@ -38,7 +38,8 @@ exports[`Loader Renders default Loader 1`] = `
   min-height: 5rem;
   max-width: 100vw;
   width: 100%;
-  padding: var(--space-large) 0;
+  background-color: var(--black-76);
+  padding: var(--spacing-l) 0;
 }
 
 .emotion-2 {
@@ -103,16 +104,16 @@ exports[`Loader Renders default Loader 1`] = `
       className="emotion-0"
     >
       <span
-        height="25rem"
-        width="25rem"
+        height="5rem"
+        width="5rem"
       />
     </div>
     <div
       className="emotion-0"
     >
       <span
-        height="25rem"
-        width="25rem"
+        height="5rem"
+        width="5rem"
       />
     </div>
   </div>
@@ -209,7 +210,8 @@ exports[`Loader Renders full screen Loader 1`] = `
   min-height: 5rem;
   max-width: 100vw;
   width: 100%;
-  padding: var(--space-large) 0;
+  background-color: var(--black-76);
+  padding: var(--spacing-l) 0;
   height: calc(100vh - (2 * var(--space-large) + var(--space-x-large)));
 }
 
@@ -223,16 +225,16 @@ exports[`Loader Renders full screen Loader 1`] = `
       className="emotion-0"
     >
       <span
-        height="25rem"
-        width="25rem"
+        height="5rem"
+        width="5rem"
       />
     </div>
     <div
       className="emotion-0"
     >
       <span
-        height="25rem"
-        width="25rem"
+        height="5rem"
+        width="5rem"
       />
     </div>
   </div>
@@ -329,7 +331,8 @@ exports[`Loader Renders full screen with custom height 1`] = `
   min-height: 5rem;
   max-width: 100vw;
   width: 100%;
-  padding: var(--space-large) 0;
+  background-color: var(--black-76);
+  padding: var(--spacing-l) 0;
   height: calc(500px - (2 * var(--space-large)));
 }
 
@@ -343,16 +346,16 @@ exports[`Loader Renders full screen with custom height 1`] = `
       className="emotion-0"
     >
       <span
-        height="25rem"
-        width="25rem"
+        height="5rem"
+        width="5rem"
       />
     </div>
     <div
       className="emotion-0"
     >
       <span
-        height="25rem"
-        width="25rem"
+        height="5rem"
+        width="5rem"
       />
     </div>
   </div>

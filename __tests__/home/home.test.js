@@ -2,7 +2,7 @@ import React from 'react';
 import serializer from 'jest-emotion';
 
 import { renderWithProviderSnapshot } from 'jest-utils';
-import Home from 'pages/home';
+import Home from 'pages';
 
 expect.addSnapshotSerializer(serializer);
 

@@ -226,9 +226,9 @@ const g = e => {
 };
 class m {
   constructor(e) {
-    (this.m = e), (this.o = new p('workbox-expiration', 1, { onupgradeneeded: e => this.q(e) }));
+    (this.m = e), (this.o = new p('workbox-expiration', 1, { onupgradeneeded: e => this.v(e) }));
   }
-  q(e) {
+  v(e) {
     const t = e.target.result.createObjectStore('cache-entries', { keyPath: 'id' });
     t.createIndex('cacheName', 'cacheName', { unique: !1 }),
       t.createIndex('timestamp', 'timestamp', { unique: !1 }),
@@ -248,11 +248,11 @@ class m {
       })(this.m);
   }
   async setTimestamp(e, t) {
-    const s = { url: (e = g(e)), timestamp: t, cacheName: this.m, id: this.v(e) };
+    const s = { url: (e = g(e)), timestamp: t, cacheName: this.m, id: this.q(e) };
     await this.o.put('cache-entries', s);
   }
   async getTimestamp(e) {
-    return (await this.o.get('cache-entries', this.v(e))).timestamp;
+    return (await this.o.get('cache-entries', this.q(e))).timestamp;
   }
   async expireEntries(e, t) {
     const s = await this.o.transaction('cache-entries', 'readwrite', (s, n) => {
@@ -273,27 +273,27 @@ class m {
     for (const e of s) await this.o.delete('cache-entries', e.id), n.push(e.url);
     return n;
   }
-  v(e) {
+  q(e) {
     return this.m + '|' + g(e);
   }
 }
-class q {
+class v {
   constructor(e, t = {}) {
     (this.R = !1),
-      (this.U = !1),
-      (this._ = t.maxEntries),
+      (this._ = !1),
+      (this.U = t.maxEntries),
       (this.L = t.maxAgeSeconds),
       (this.m = e),
       (this.M = new m(e));
   }
   async expireEntries() {
-    if (this.R) return void (this.U = !0);
+    if (this.R) return void (this._ = !0);
     this.R = !0;
     const e = this.L ? Date.now() - 1e3 * this.L : 0,
-      t = await this.M.expireEntries(e, this._),
+      t = await this.M.expireEntries(e, this.U),
       s = await self.caches.open(this.m);
     for (const e of t) await s.delete(e);
-    (this.R = !1), this.U && ((this.U = !1), d(this.expireEntries()));
+    (this.R = !1), this._ && ((this._ = !1), d(this.expireEntries()));
   }
   async updateTimestamp(e) {
     await this.M.setTimestamp(e, Date.now());
@@ -305,12 +305,12 @@ class q {
     return !1;
   }
   async delete() {
-    (this.U = !1), await this.M.expireEntries(1 / 0);
+    (this._ = !1), await this.M.expireEntries(1 / 0);
   }
 }
-const v = (e, t) => e.filter(e => t in e),
+const q = (e, t) => e.filter(e => t in e),
   R = async ({ request: e, mode: t, plugins: s = [] }) => {
-    const n = v(s, 'cacheKeyWillBeUsed');
+    const n = q(s, 'cacheKeyWillBeUsed');
     let i = e;
     for (const e of n)
       (i = await e.cacheKeyWillBeUsed.call(e, { mode: t, request: i })),
@@ -357,7 +357,7 @@ const v = (e, t) => e.filter(e => t in e),
     })({ event: i, plugins: a, response: n, request: o });
     if (!h) return;
     const u = await self.caches.open(e),
-      l = v(a, 'cacheDidUpdate'),
+      l = q(a, 'cacheDidUpdate'),
       f = l.length > 0 ? await b({ cacheName: e, matchOptions: c, request: o }) : null;
     try {
       await u.put(o, h);
@@ -387,7 +387,7 @@ const v = (e, t) => e.filter(e => t in e),
       const e = await n.preloadResponse;
       if (e) return e;
     }
-    const r = v(i, 'fetchDidFail'),
+    const r = q(i, 'fetchDidFail'),
       a = r.length > 0 ? e.clone() : null;
     try {
       for (const t of i)
@@ -421,26 +421,26 @@ const v = (e, t) => e.filter(e => t in e),
 try {
   self['workbox:strategies:5.1.3'] && _();
 } catch (e) {}
-const M = {
+const E = {
   cacheWillUpdate: async ({ response: e }) => (200 === e.status || 0 === e.status ? e : null),
 };
-let N;
-async function E(e, t) {
+let M;
+async function N(e, t) {
   const s = e.clone(),
     n = { headers: new Headers(s.headers), status: s.status, statusText: s.statusText },
     i = t ? t(n) : n,
     r = (function () {
-      if (void 0 === N) {
+      if (void 0 === M) {
         const e = new Response('');
         if ('body' in e)
           try {
-            new Response(e.body), (N = !0);
+            new Response(e.body), (M = !0);
           } catch (e) {
-            N = !1;
+            M = !1;
           }
-        N = !1;
+        M = !1;
       }
-      return N;
+      return M;
     })()
       ? s.body
       : await s.blob();
@@ -465,9 +465,9 @@ function j(e) {
     r = new URL(n, location.href);
   return i.searchParams.set('__WB_REVISION__', s), { cacheKey: i.href, url: r.href };
 }
-class D {
+class C {
   constructor(e) {
-    (this.m = l(e)), (this.N = new Map()), (this.j = new Map()), (this.D = new Map());
+    (this.m = l(e)), (this.N = new Map()), (this.j = new Map()), (this.C = new Map());
   }
   addToCacheList(e) {
     const s = [];
@@ -481,9 +481,9 @@ class D {
           secondEntry: e,
         });
       if ('string' != typeof n && n.integrity) {
-        if (this.D.has(e) && this.D.get(e) !== n.integrity)
+        if (this.C.has(e) && this.C.get(e) !== n.integrity)
           throw new t('add-to-cache-list-conflicting-integrities', { url: i });
-        this.D.set(e, n.integrity);
+        this.C.set(e, n.integrity);
       }
       if ((this.N.set(i, e), this.j.set(i, r), s.length > 0)) {
         const e = `Workbox is precaching URLs without revision info: ${s.join(
@@ -501,9 +501,9 @@ class D {
       a = new Set(r.map(e => e.url));
     for (const [e, t] of this.N) a.has(t) ? n.push(e) : s.push({ cacheKey: t, url: e });
     const c = s.map(({ cacheKey: s, url: n }) => {
-      const i = this.D.get(s),
+      const i = this.C.get(s),
         r = this.j.get(n);
-      return this.S({ cacheKey: s, cacheMode: r, event: e, integrity: i, plugins: t, url: n });
+      return this.T({ cacheKey: s, cacheMode: r, event: e, integrity: i, plugins: t, url: n });
     });
     await Promise.all(c);
     return { updatedURLs: s.map(e => e.url), notUpdatedURLs: n };
@@ -516,14 +516,14 @@ class D {
     for (const i of t) s.has(i.url) || (await e.delete(i), n.push(i.url));
     return { deletedURLs: n };
   }
-  async S({ cacheKey: e, url: s, cacheMode: n, event: i, plugins: r, integrity: a }) {
+  async T({ cacheKey: e, url: s, cacheMode: n, event: i, plugins: r, integrity: a }) {
     const c = new Request(s, { integrity: a, cache: n, credentials: 'same-origin' });
     let o,
       h = await L({ event: i, plugins: r, request: c });
     for (const e of r || []) 'cacheWillUpdate' in e && (o = e);
     if (!(o ? await o.cacheWillUpdate({ event: i, request: c, response: h }) : h.status < 400))
       throw new t('bad-precaching-response', { url: s, status: h.status });
-    h.redirected && (h = await E(h)),
+    h.redirected && (h = await N(h)),
       await x({
         event: i,
         plugins: r,
@@ -572,10 +572,10 @@ class D {
     return () => n({ request: i });
   }
 }
-let S;
-const T = () => (S || (S = new D()), S);
-const K = (e, t) => {
-  const s = T().getURLsToCacheKeys();
+let T;
+const K = () => (T || (T = new C()), T);
+const k = (e, t) => {
+  const s = K().getURLsToCacheKeys();
   for (const n of (function* (
     e,
     { ignoreURLParametersMatching: t, directoryIndex: s, cleanURLs: n, urlManipulation: i } = {},
@@ -615,7 +615,7 @@ function P(e) {
     } = {}) => {
       const i = l();
       self.addEventListener('fetch', r => {
-        const a = K(r.request.url, {
+        const a = k(r.request.url, {
           cleanURLs: s,
           directoryIndex: t,
           ignoreURLParametersMatching: e,
@@ -631,76 +631,88 @@ function P(e) {
     })(e),
     (O = !0));
 }
-const k = [],
-  C = {
-    get: () => k,
+const D = [],
+  B = {
+    get: () => D,
     add(e) {
-      k.push(...e);
+      D.push(...e);
     },
   },
   A = e => {
-    const t = T(),
-      s = C.get();
+    const t = K(),
+      s = B.get();
     e.waitUntil(
       t.install({ event: e, plugins: s }).catch(e => {
         throw e;
       }),
     );
   },
-  I = e => {
-    const t = T();
+  S = e => {
+    const t = K();
     e.waitUntil(t.activate());
   };
-var W;
+var I;
 self.addEventListener('install', () => self.skipWaiting()),
   self.addEventListener('activate', () => self.clients.claim()),
-  (W = {}),
+  (I = {}),
   (function (e) {
-    T().addToCacheList(e),
-      e.length > 0 && (self.addEventListener('install', A), self.addEventListener('activate', I));
+    K().addToCacheList(e),
+      e.length > 0 && (self.addEventListener('install', A), self.addEventListener('activate', S));
   })([
     {
-      url: '_next/static/MbyrfJnqSxX8SQphgwjD9/_buildManifest.js',
+      url: '_next/static/9M90CqEQ8BdXZj33hvVwp/_buildManifest.js',
       revision: 'fb96ae7926f5104f50f0cf1b3a23a9b5',
     },
     {
-      url: '_next/static/MbyrfJnqSxX8SQphgwjD9/_ssgManifest.js',
+      url: '_next/static/9M90CqEQ8BdXZj33hvVwp/_ssgManifest.js',
       revision: 'abee47769bf307639ace4945f9cfd4ff',
     },
     {
-      url: '_next/static/MbyrfJnqSxX8SQphgwjD9/pages/_app.js',
-      revision: '89cd4351517fc3f8966cfc053242d181',
+      url: '_next/static/9M90CqEQ8BdXZj33hvVwp/pages/_app.js',
+      revision: '4877518479121c7dba4af1e87dd1e834',
     },
     {
-      url: '_next/static/MbyrfJnqSxX8SQphgwjD9/pages/_error.js',
-      revision: '9de64f82c2839116ac2a13a1e7622a0e',
+      url: '_next/static/9M90CqEQ8BdXZj33hvVwp/pages/_error.js',
+      revision: '062308238cf36243eeb5546054811ed4',
     },
     {
-      url: '_next/static/MbyrfJnqSxX8SQphgwjD9/pages/index.js',
-      revision: 'f28e677712cb9f323958144d90f17df4',
+      url: '_next/static/9M90CqEQ8BdXZj33hvVwp/pages/index.js',
+      revision: '019d3a42d2d0d2481e5e244b45506f20',
     },
     {
-      url: '_next/static/chunks/5814fbc24f766f34ac9cb1693667aa2768dacd11.654a20f2c39ac74d8064.js',
-      revision: 'dbe6eb0e9c360adb7809c067a448b2eb',
+      url: '_next/static/chunks/8804ed50.399f109fdec6a50191d5.js',
+      revision: 'ed6f873601b904634e2924fa7242a47a',
+    },
+    {
+      url: '_next/static/chunks/bb4bd540f4e1876d1d183018f5a154e094e7b0b6.5f7c5a387d5e8a95da9b.js',
+      revision: '3290c465c4696d2fab3c4aeafb1b2f7d',
     },
     {
       url: '_next/static/chunks/framework.c8d289f8b96717e32d7a.js',
       revision: '8dbfd54516c12914d3e0cd417cd67882',
     },
     {
-      url: '_next/static/runtime/main-b6e95f177e78d9d10d61.js',
-      revision: '44db0400f5ebea32297ecabb9b718c47',
+      url: '_next/static/chunks/styles.9482237f5ee6cb31ae49.js',
+      revision: '39115b495a5e75cb868161960820a1b1',
     },
     {
-      url: '_next/static/runtime/polyfills-db3eeaf8fbc6db3a50d4.js',
-      revision: 'cf3e362240114c40790b57c8ebecab35',
+      url: '_next/static/css/8804ed50.fe07a263.chunk.css',
+      revision: '476773ffddd8fad867e411c49a0f3ef4',
+    },
+    {
+      url: '_next/static/runtime/main-b14c59a6ae4248a8368a.js',
+      revision: '67f62bc446c96f61d2760b49e0e83cfd',
+    },
+    {
+      url: '_next/static/runtime/polyfills-f1a72475392243fcf9b5.js',
+      revision: 'e472d47f8ab63cc45bae6a9ea4eec0c5',
     },
     {
       url: '_next/static/runtime/webpack-83bd83ab777f80a6c75c.js',
       revision: 'f5e6e2fca3144cc944812cfa3547f475',
     },
   ]),
-  P(W),
+  P(I),
   (function (e, s, r) {
     let a;
     if ('string' == typeof e) {
@@ -724,9 +736,9 @@ self.addEventListener('install', () => self.skipWaiting()),
       constructor(e = {}) {
         if (((this.m = f(e.cacheName)), e.plugins)) {
           const t = e.plugins.some(e => !!e.cacheWillUpdate);
-          this.T = t ? e.plugins : [M, ...e.plugins];
-        } else this.T = [M];
-        (this.K = e.networkTimeoutSeconds || 0),
+          this.K = t ? e.plugins : [E, ...e.plugins];
+        } else this.K = [E];
+        (this.k = e.networkTimeoutSeconds || 0),
           (this.O = e.fetchOptions),
           (this.P = e.matchOptions);
       }
@@ -735,38 +747,38 @@ self.addEventListener('install', () => self.skipWaiting()),
         'string' == typeof s && (s = new Request(s));
         const i = [];
         let r;
-        if (this.K) {
-          const { id: t, promise: a } = this.k({ request: s, event: e, logs: n });
+        if (this.k) {
+          const { id: t, promise: a } = this.D({ request: s, event: e, logs: n });
           (r = t), i.push(a);
         }
-        const a = this.C({ timeoutId: r, request: s, event: e, logs: n });
+        const a = this.B({ timeoutId: r, request: s, event: e, logs: n });
         i.push(a);
         let c = await Promise.race(i);
         if ((c || (c = await a), !c)) throw new t('no-response', { url: s.url });
         return c;
       }
-      k({ request: e, logs: t, event: s }) {
+      D({ request: e, logs: t, event: s }) {
         let n;
         return {
           promise: new Promise(t => {
             n = setTimeout(async () => {
               t(await this.A({ request: e, event: s }));
-            }, 1e3 * this.K);
+            }, 1e3 * this.k);
           }),
           id: n,
         };
       }
-      async C({ timeoutId: e, request: t, logs: s, event: n }) {
+      async B({ timeoutId: e, request: t, logs: s, event: n }) {
         let i, r;
         try {
-          r = await L({ request: t, event: n, fetchOptions: this.O, plugins: this.T });
+          r = await L({ request: t, event: n, fetchOptions: this.O, plugins: this.K });
         } catch (e) {
           i = e;
         }
         if ((e && clearTimeout(e), i || !r)) r = await this.A({ request: t, event: n });
         else {
           const e = r.clone(),
-            s = x({ cacheName: this.m, request: t, response: e, event: n, plugins: this.T });
+            s = x({ cacheName: this.m, request: t, response: e, event: n, plugins: this.K });
           if (n)
             try {
               n.waitUntil(s);
@@ -780,7 +792,7 @@ self.addEventListener('install', () => self.skipWaiting()),
           request: t,
           event: e,
           matchOptions: this.P,
-          plugins: this.T,
+          plugins: this.K,
         });
       }
     })({
@@ -796,8 +808,8 @@ self.addEventListener('install', () => self.skipWaiting()),
               cachedResponse: n,
             }) => {
               if (!n) return null;
-              const i = this.I(n),
-                r = this.W(s);
+              const i = this.S(n),
+                r = this.I(s);
               d(r.expireEntries());
               const a = r.updateTimestamp(t.url);
               if (e)
@@ -807,20 +819,20 @@ self.addEventListener('install', () => self.skipWaiting()),
               return i ? n : null;
             }),
               (this.cacheDidUpdate = async ({ cacheName: e, request: t }) => {
-                const s = this.W(e);
+                const s = this.I(e);
                 await s.updateTimestamp(t.url), await s.expireEntries();
               }),
-              (this.B = e),
+              (this.W = e),
               (this.L = e.maxAgeSeconds),
               (this.F = new Map()),
               e.purgeOnQuotaError && ((t = () => this.deleteCacheAndMetadata()), w.add(t));
           }
-          W(e) {
+          I(e) {
             if (e === f()) throw new t('expire-custom-caches-only');
             let s = this.F.get(e);
-            return s || ((s = new q(e, this.B)), this.F.set(e, s)), s;
+            return s || ((s = new v(e, this.W)), this.F.set(e, s)), s;
           }
-          I(e) {
+          S(e) {
             if (!this.L) return !0;
             const t = this.H(e);
             if (null === t) return !0;

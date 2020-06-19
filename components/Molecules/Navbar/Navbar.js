@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// Bulma CSS
-import 'bulma/css/bulma.min.css';
 
 import { NavbarItem } from '.';
 

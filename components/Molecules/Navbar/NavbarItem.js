@@ -14,7 +14,7 @@ const NavbarItem = ({ route, page, activeRoute }) => (
 );
 
 NavbarItem.propTypes = {
-  activeRoute: PropTypes.string.isRequired,
+  activeRoute: PropTypes.string,
   page: PropTypes.string.isRequired,
   route: PropTypes.string.isRequired,
 };

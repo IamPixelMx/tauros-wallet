@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { IconStyled, LoaderStyled, LoaderIconsStyled } from './styles';
-import { TaurosIcon } from 'components';
+import { TaurosDarkIcon } from 'components';
 
 const IconSize = {
   width: '5rem',

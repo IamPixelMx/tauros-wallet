@@ -1,15 +1,11 @@
 import React from 'react';
-import serializer from 'jest-emotion';
-
-import { renderWithProviderSnapshot } from 'jest-utils';
-import Navbar from 'components';
-
-expect.addSnapshotSerializer(serializer);
+import renderer from 'react-test-renderer';
+import { Navbar } from 'components';
 
 describe('Navbar', () => {
-  const navbarElement = renderWithProviderSnapshot(<Navbar />).toJSON();
+  const navbarElement = renderer.create(<Navbar />).toJSON();
 
-  it('Renders navbar', () => {
+  it('Renders Navbar', () => {
     expect(navbarElement).toMatchSnapshot();
   });
 });

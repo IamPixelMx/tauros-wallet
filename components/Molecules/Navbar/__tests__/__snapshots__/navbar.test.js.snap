@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar Renders Navbar 1`] = `
+<nav
+  className="navbar"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="navbar-brand"
+    >
+      <figure
+        className="image is-128x128"
+      >
+        <img
+          alt="logo"
+          src="/tauros.png"
+        />
+      </figure>
+      <span
+        className="navbar-burger"
+        data-target="navbarMenuHeroB"
+        onClick={[Function]}
+      >
+        <span />
+        <span />
+        <span />
+      </span>
+    </div>
+    <div
+      className="navbar-menu"
+      id="navbarMenuHeroB"
+    >
+      <div
+        className="navbar-end"
+      >
+        <a
+          className="navbar-item is-nice-blue"
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Tarjeta Tauros
+        </a>
+        <a
+          className="navbar-item is-nice-blue"
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Wallets
+        </a>
+        <a
+          className="navbar-item is-nice-blue"
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Exchange
+        </a>
+        <a
+          className="navbar-item is-nice-blue"
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Perfil
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+`;

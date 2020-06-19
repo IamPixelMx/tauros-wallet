@@ -17,7 +17,7 @@ const Home = () => {
     setTimeout(setIsLoaded(true), 1100);
   };
 
-  return <div>Holiiiiiii</div>;
+  return <div>Holiiiiiii 💕</div>;
 };
 
 export default Home;

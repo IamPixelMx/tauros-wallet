@@ -1,14 +1,11 @@
-import serializer from 'jest-emotion';
-
-import { renderWithProviderSnapshot } from 'jest-utils';
-import Layout from 'components';
-
-expect.addSnapshotSerializer(serializer);
+import React from 'react';
+import renderer from 'react-test-renderer';
+import { Layout } from 'components';
 
 describe('Layout', () => {
-  const layoutElement = renderWithProviderSnapshot(<Layout />).toJSON();
+  const layoutElement = renderer.create(<Layout />).toJSON();
 
-  it('Renders layout', () => {
+  it('Renders Layout', () => {
     expect(layoutElement).toMatchSnapshot();
   });
 });

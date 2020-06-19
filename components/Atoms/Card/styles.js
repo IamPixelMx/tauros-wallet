@@ -31,10 +31,8 @@ export const CardStyled = styled.div`
   padding: 0;
   overflow-y: auto;
   margin: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
   ${hasPadding}
   ${itemCardStyled}
   ${mediumCardStyled}
-  ${CardStyled} {
-    margin-top: var(--spacing-xs);
-  }
 `;
