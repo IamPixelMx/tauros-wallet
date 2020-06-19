@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import { render } from '@testing-library/react';
-import configureStore from 'redux/configureStore';
+import configureStore from 'store/configureStore';
 
 const renderWithProvider = (
   uiComponent,

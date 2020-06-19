@@ -5,7 +5,7 @@ import App from 'next/app';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
 // Configfuration for redux store
-import configureStore from 'redux/configureStore';
+import configureStore from 'store/configureStore';
 
 // Emotion CSS
 import { ThemeProvider } from 'emotion-theming';
