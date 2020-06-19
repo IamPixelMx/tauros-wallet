@@ -15,17 +15,19 @@ const getIcon = icon => {
 
 const TradingHistoryItem = ({ icon, coin, balance }) => (
   <Card size='item'>
-    {/* {getIcon(icon)} */}
-    <BtcIcon {...IconSize} />
+    {getIcon(icon)}
     <CardTitle textAlign='left' isBold>
-      {coin}
+      {balance + '' + coin}
     </CardTitle>
-    <CardSubtitle textAlign='right'>{balance}</CardSubtitle>
+    <CardSubtitle textAlign='right'>
+      {balance}
+      {/* {getCurrency(balance, coin)} */}
+    </CardSubtitle>
   </Card>
 );
 
 TradingHistoryItem.defaultProps = {
-  coin: '',
+  coin: 'MXN',
   balance: 0,
   icon: '',
 };

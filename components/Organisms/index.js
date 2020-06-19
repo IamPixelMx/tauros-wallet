@@ -1,4 +1,5 @@
+import { Balance } from './Balance';
 import { Dashboard } from './Dashboard';
 import { Layout } from './Layout';
 
-export { Dashboard, Layout };
+export { Balance, Dashboard, Layout };

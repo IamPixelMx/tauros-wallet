@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-// import { Layout } from 'components';
+import { Dashboard, Layout } from 'components';
 
 const Home = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -8,16 +8,13 @@ const Home = () => {
   /*
    * Use 'useEffect' to manage Splash effect
    */
-  useEffect(() => {
-    handleLoad();
-  }, []);
+  // useEffect(() => {}, []);
 
-  // Function to disable Splash once the page is loaded
-  const handleLoad = () => {
-    setTimeout(setIsLoaded(true), 1100);
-  };
-
-  return <div>Holiiiiiii 💕</div>;
+  return (
+    <Layout>
+      <Dashboard />
+    </Layout>
+  );
 };
 
 export default Home;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button, Card, CardSubtitle, CardTitle, Modal, ModalTitle } from 'components';
+import { Balance, Button, Card, CardSubtitle, CardTitle, Modal, ModalTitle } from 'components';
 import { DashboardContentStyled, DashboardSplitCardsStyled } from './styles';
 
 const Dashboard = () => {
@@ -13,13 +13,7 @@ const Dashboard = () => {
   return (
     <React.Fragment>
       <DashboardSplitCardsStyled>
-        <Card hasPadding={false}>
-          <Card size='item'>
-            <CardTitle textAlign='left' isBold>
-              Wallets
-            </CardTitle>
-          </Card>
-        </Card>
+        <Balance />
         <Card size='medium'>
           <DashboardContentStyled>
             <Button disabled>Vender</Button>

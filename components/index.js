@@ -15,11 +15,12 @@ import {
   TitleTab,
 } from './Atoms';
 
-import { Modal, ModalTitle, Navbar } from './Molecules';
+import { Modal, ModalTitle, Navbar, TradingHistoryItem, TransferHistoryItem } from './Molecules';
 
-import { Dashboard, Layout } from './Organisms';
+import { Balance, Dashboard, Layout } from './Organisms';
 
 export {
+  Balance,
   Button,
   Card,
   CardSubtitle,
@@ -38,5 +39,7 @@ export {
   Modal,
   ModalTitle,
   Navbar,
+  TradingHistoryItem,
+  TransferHistoryItem,
   TitleTab,
 };
