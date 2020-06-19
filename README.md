@@ -39,7 +39,7 @@ Tauros Wallet la herramienta que te brinda toda la informacion necesaria para ll
 - [Acerca del Proyecto](#acerca-del-proyecto)
   - [Herramientas](#_herramientas_)
   - [Próximos alcances](#próximos-alcances)
-- [Setup](#setup)
+- [Correr proyecto localmente](#correr-proyecto-localmente)
 - [Contacto](#contacto)
 
  <br />
@@ -83,9 +83,9 @@ muestra el valor de Bitcoin en tiempo real.
 Este proyecto puede ser corrido locamente clonando e instalando localmente las dependencias
 requeridas.
 
-### Clonar repositorio
+### Crear proyecto localmente
 
-Clonar repositorio corriendo
+Comenzar proyecto de manera locar clonando este repositorio con:
 
 ```
 $ git clone https://github.com/eriika19/tauros-wallet.git
@@ -93,8 +93,8 @@ $ git clone https://github.com/eriika19/tauros-wallet.git
 
 ### Instalar dependencias
 
-Una vez clonado se debe ir al directorio raíz del proyecto. Una vez en la raiz del proyecto hay que
-ejcutar el siguiente comando para instalar todas las dependencias listadas en el package.json:
+Una vez clonado se debe ir al directorio raíz del proyecto y ejecutar el siguiente comando para
+instalar todas las dependencias listadas en el `package.json`:
 
 ```
 $ yarn
@@ -106,13 +106,13 @@ Se deben definir las variables de ambiente para poder realizar las llamadas a la
 repositorio no las incluye. Es posible correr `cp .env.example .env` para definir las propias
 variables de ambiente en archivo `.env`.
 
-For example, to point the app to an especific API endpoint, add this to your local `.env` file:
+Ejemplo:
 
 ```shell
 API_URL=https://api.staging.tauros.io/api
 ```
 
-## Correr proyecto
+### Correr proyecto
 
 - Para correr Tauros Wallet en un ambiente de producción ejecutar:
 
@@ -132,7 +132,19 @@ $ yarn dev
 
 Una vez corriendo estará listo en `http://localhost:3000/`
 
-## Prettier and Eslint
+### Ejecutar tests
+
+Para ejecutar los tests correr los siguientes comando:
+
+```
+$ yarn test
+```
+
+```
+$ yarn test:coverage
+```
+
+### Prettier and Eslint
 
 Prettier and Eslint se ejecutarán automáticamente al realizar un _commit_.
 
@@ -150,6 +162,10 @@ $ yarn prettier:write
 $ yarn lint:js
 ```
 
+### Comentarios
+
+Cualquier duda o comentario no dudes en abrir un issue en el proyecto. 😊
+
 ---
 
 > ## _Contacto_
@@ -163,4 +179,4 @@ LinkedIn - [@itzelenciso](https://www.linkedin.com/in/itzelenciso/)
 Correo Gmail -
 [enciso.iq@gmail.com](<mailto:enciso.iq@gmail.com?subject=Reclutamiento&body=¡Buen día! el motivo de contacto es:>)
 
-¡Gracias por visitar! 😊
+¡Gracias por visitar!
