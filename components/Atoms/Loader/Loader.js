@@ -12,10 +12,10 @@ const Loader = ({ isFullScreen, customHeight }) => (
   <LoaderStyled isFullScreen={isFullScreen} customHeight={customHeight}>
     <LoaderIconsStyled>
       <IconStyled>
-        <TaurosIcon {...IconSize} />
+        <TaurosDarkIcon {...IconSize} />
       </IconStyled>
       <IconStyled>
-        <TaurosIcon {...IconSize} />
+        <TaurosDarkIcon {...IconSize} />
       </IconStyled>
     </LoaderIconsStyled>
   </LoaderStyled>

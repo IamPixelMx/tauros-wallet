@@ -1,37 +1,42 @@
-import { Footer } from './Footer';
 import {
-  CoffeeIcon,
-  DessertIcon,
-  LikeIcon,
-  MelpIcon,
-  SearchIcon,
-  SaladIcon,
-  ShareCircleIcon,
-  ShareIcon,
-  OrientalIcon,
-} from './Icons';
-import { Layout } from './Layout';
-import { LinkButton } from './LinkButton';
-import { Loader } from './Loader';
-import { Navbar } from './Navbar';
-import { Splash } from './Splash';
-import { TitleTab } from './TitleTab';
+  Button,
+  Card,
+  CardSubtitle,
+  CardTitle,
+  AddIcon,
+  BtcIcon,
+  CloseIcon,
+  DownIcon,
+  MxnIcon,
+  TaurosIcon,
+  TaurosDarkIcon,
+  UpIcon,
+  Loader,
+  TitleTab,
+} from './Atoms';
+
+import { Modal, ModalTitle, Navbar } from './Molecules';
+
+import { Dashboard, Layout } from './Organisms';
 
 export {
-  CoffeeIcon,
-  DessertIcon,
-  LikeIcon,
-  MelpIcon,
-  SearchIcon,
-  SaladIcon,
-  ShareCircleIcon,
-  ShareIcon,
-  OrientalIcon,
+  Button,
+  Card,
+  CardSubtitle,
+  CardTitle,
+  Dashboard,
+  AddIcon,
+  BtcIcon,
+  CloseIcon,
+  DownIcon,
+  MxnIcon,
+  TaurosIcon,
+  TaurosDarkIcon,
+  UpIcon,
   Layout,
-  LinkButton,
   Loader,
-  Footer,
+  Modal,
+  ModalTitle,
   Navbar,
-  Splash,
   TitleTab,
 };

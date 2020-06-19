@@ -4,7 +4,16 @@ import { CardSubtitle, CardTitle } from './CardContent';
 import { Loader } from './Loader';
 import { TitleTab } from './TitleTab';
 
-import { AddIcon, BtcIcon, CloseIcon, DownIcon, MxnIcon, TaurosIcon, UpIcon } from './Icons';
+import {
+  AddIcon,
+  BtcIcon,
+  CloseIcon,
+  DownIcon,
+  MxnIcon,
+  TaurosIcon,
+  TaurosDarkIcon,
+  UpIcon,
+} from './Icons';
 
 export {
   Button,
@@ -17,6 +26,7 @@ export {
   DownIcon,
   MxnIcon,
   TaurosIcon,
+  TaurosDarkIcon,
   UpIcon,
   Loader,
   TitleTab,

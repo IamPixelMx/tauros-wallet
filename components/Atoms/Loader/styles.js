@@ -35,6 +35,7 @@ export const LoaderStyled = styled.div`
   min-height: 5rem;
   max-width: 100vw;
   width: 100%;
+  background-color: var(--black-76);
   padding: var(--spacing-l) 0;
   ${fullScreenLoaderStyled}
   ${customHeightStyled}

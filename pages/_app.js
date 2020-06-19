@@ -11,12 +11,15 @@ import configureStore from 'store/configureStore';
 import { ThemeProvider } from 'emotion-theming';
 import { GlobalStyles, theme } from 'styles';
 
+// import { TitleTab } from 'components';
+
 class TaurosWallet extends App {
   render() {
     const { Component, pageProps, store } = this.props;
 
     return (
       <Provider store={store}>
+        {/* <TitleTab /> */}
         <ThemeProvider theme={theme}>
           <GlobalStyles />
           <Component {...pageProps} />
