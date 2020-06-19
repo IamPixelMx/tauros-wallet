@@ -8,7 +8,7 @@ const IconSize = {
   height: '.5rem',
 };
 
-const TradingHistoryItem = ({ transaction, amount, info }) => (
+const TransferHistoryItem = ({ transaction, amount, info }) => (
   <Card size='item'>
     <UpIcon {...IconSize} />
     <CardTitle textAlign='left' isBold>
@@ -22,16 +22,16 @@ const TradingHistoryItem = ({ transaction, amount, info }) => (
   </Card>
 );
 
-TradingHistoryItem.defaultProps = {
-  amount: '',
+TransferHistoryItem.defaultProps = {
+  amount: 0,
   info: '',
   transaction: '',
 };
 
-TradingHistoryItem.propTypes = {
+TransferHistoryItem.propTypes = {
   amount: PropTypes.number,
   info: PropTypes.string,
   transaction: PropTypes.string,
 };
 
-export default TradingHistoryItem;
+export default TransferHistoryItem;

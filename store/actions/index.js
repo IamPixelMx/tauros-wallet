@@ -1,13 +1,3 @@
-import {
-  getMelpRestaurantsData,
-  getMelpRestaurantsDataError,
-  getMelpRestaurantsDataSuccess,
-  setActiveCategorie,
-} from './restaurantsActions';
+import { getBalancesList, getBalancesListError, getBalancesListSuccess } from './balancesActions';
 
-export {
-  getMelpRestaurantsData,
-  getMelpRestaurantsDataError,
-  getMelpRestaurantsDataSuccess,
-  setActiveCategorie,
-};
+export { getBalancesList, getBalancesListError, getBalancesListSuccess };

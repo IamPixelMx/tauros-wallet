@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { GET_BALANCES_LIST } from '../store/constants';
 
 import { Dashboard, Layout } from 'components';
 
 const Home = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+  const dispatch = useDispatch();
 
   /*
-   * Use 'useEffect' to manage Splash effect
+   * Use 'useEffect' to get Melp data
    */
-  // useEffect(() => {}, []);
+  useEffect(() => {
+    dispatch({ type: GET_BALANCES_LIST });
+  }, []);
 
   return (
     <Layout>

@@ -1,9 +1,9 @@
 import { all } from 'redux-saga/effects';
 //sagas
-import restaurantsSaga from './restaurantsSaga';
+import getListSaga from './getListSaga';
 
 function* rootSaga() {
-  yield all([restaurantsSaga()]);
+  yield all([getListSaga()]);
 }
 
 export default rootSaga;

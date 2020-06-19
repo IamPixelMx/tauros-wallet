@@ -1,3 +1,3 @@
-import { restaurants } from './restaurants';
+import { balances } from './balances';
 
-export { restaurants };
+export { balances };

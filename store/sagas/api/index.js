@@ -1,3 +1,3 @@
-import { getMelpData } from './melpAPI';
+import makeApiCall from './tauros-api';
 
-export { getMelpData };
+export { makeApiCall };

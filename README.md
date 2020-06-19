@@ -13,7 +13,7 @@
     <img src="public/tauros.png" alt="Logo" width="155">
   </a>
 
-  <h3 align="center">Tauros-Wallet</h3>
+  <h3 align="center">Tauros Wallet</h3>
 
   <p align="center">
 Tauros Wallet la herramienta que te brinda toda la informacion necesaria para llevar el tracking de todos tus activos digitales, realizar traiding y monitorear el comportamiento del mercado en tiempo real.   <br />
@@ -75,8 +75,6 @@ muestra el valor de Bitcoin en tiempo real.
 ### Próximos alcances
 
 - [ ] Añadir tests en todos los componentes y páginas
-
----
 
 ## Correr proyecto localmente
 
@@ -148,7 +146,7 @@ $ yarn test:coverage
 
 Prettier and Eslint se ejecutarán automáticamente al realizar un _commit_.
 
-Sin embargo, tambipueden ser ejecutados independentemente con los siguientes comandos:
+Sin embargo, también pueden ser ejecutados independentemente con los siguientes comandos:
 
 **Prettier**
 
@@ -164,7 +162,7 @@ $ yarn lint:js
 
 ### Comentarios
 
-Cualquier duda o comentario no dudes en abrir un issue en el proyecto. 😊
+Cualquier duda o comentario no dudes en abrir un issue. 😊
 
 ---
 
