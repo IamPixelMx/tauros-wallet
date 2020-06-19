@@ -21,27 +21,24 @@ const getParamsHeaders = ({ method, url, API_SECRET, data }) => {
   const { dataToString, body } = paramsDataObj;
 
   // concatenate message
-  // const prevMessage = nonce + method.toUpperCase() + url;
-  // const afterMessage = dataToString && prevMessage + dataToString;
-  // let message = afterMessage ? afterMessage : prevMessage;
-  let message =
-    dataToString !== null
-      ? nonce + method.toUpperCase() + url + dataToString
-      : nonce + method.toUpperCase() + url;
+  const prevMessage = nonce + method.toUpperCase() + url;
+  const afterMessage = dataToString && prevMessage + dataToString;
+  let message = afterMessage ? afterMessage : prevMessage;
   let api_sha256 = crypto.createHash('sha256').update(message).digest();
+
   // create a sha512 hmac with the secret
   let hmac = crypto.createHmac('sha512', Buffer.from(API_SECRET, 'base64'));
 
-  const signature = hmac.update(api_sha256).digest('base64');
-  return { nonce, signature, method, url, body };
+  let signature = hmac.update(api_sha256).digest('base64');
+  return body ? { nonce, signature, method, url, body } : { nonce, signature, method, url };
 };
 
 const makeApiCall = async params => {
   const paramsHeaders = getParamsHeaders(params);
-  const axios = await axiosWithHandleError(paramsHeaders);
-  console.log('==============AXIOS=====================');
-  console.log(axios);
+  console.log('=================PARAMS HEADERS===================');
+  console.log(paramsHeaders);
   console.log('====================================');
+  const axios = await axiosWithHandleError(paramsHeaders);
   const response = await axios();
   console.log('==============RESPONSE=====================');
   console.log(response);
