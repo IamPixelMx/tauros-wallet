@@ -21,13 +21,13 @@ const getParamsHeaders = ({ method, url, API_SECRET, data }) => {
   const { dataToString, body } = paramsDataObj;
 
   // concatenate message
-  const prevMessage = nonce + method.toUpperCase() + url;
-  const afterMessage = dataToString && prevMessage + dataToString;
-  let message = afterMessage ? afterMessage : prevMessage;
-  // let message =
-  //   dataToString !== null
-  //     ? nonce + method.toUpperCase() + url + dataToString
-  //     : nonce + method.toUpperCase() + url;
+  // const prevMessage = nonce + method.toUpperCase() + url;
+  // const afterMessage = dataToString && prevMessage + dataToString;
+  // let message = afterMessage ? afterMessage : prevMessage;
+  let message =
+    dataToString !== null
+      ? nonce + method.toUpperCase() + url + dataToString
+      : nonce + method.toUpperCase() + url;
   let api_sha256 = crypto.createHash('sha256').update(message).digest();
   // create a sha512 hmac with the secret
   let hmac = crypto.createHmac('sha512', Buffer.from(API_SECRET, 'base64'));
@@ -43,11 +43,12 @@ const makeApiCall = async params => {
   console.log(axios);
   console.log('====================================');
   const response = await axios();
-  const { data } = response;
   console.log('==============RESPONSE=====================');
   console.log(response);
   console.log('====================================');
-  return data;
+  const { data } = response;
+  const res = data && response;
+  return res;
 };
 
 export default makeApiCall;

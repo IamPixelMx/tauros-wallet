@@ -1,12 +1,12 @@
 import { call, takeLatest, put } from 'redux-saga/effects';
 import { makeApiCall } from './api';
-import { API_SECRET } from 'utils';
+import { API_SECRET, LIST_BALANCES_URL } from 'utils';
 import { GET_BALANCES_LIST } from '../constants';
 import { getBalancesListError, getBalancesListSuccess } from '../actions';
 
 function* getData() {
   try {
-    const paramsObj = { method: 'GET', url: GET_BALANCES_LIST, API_SECRET };
+    const paramsObj = { method: 'GET', url: LIST_BALANCES_URL, API_SECRET };
     const request = yield call(makeApiCall, paramsObj);
     yield put(getBalancesListSuccess(request));
   } catch (error) {
