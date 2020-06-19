@@ -18,6 +18,7 @@ const TradingHistoryItem = ({ transaction, amount, info }) => (
     <CardSubtitle textAlign='right' isBold>
       {amount}
     </CardSubtitle>
+    {/* {getCurrency(balance, coin)} */}
   </Card>
 );
 

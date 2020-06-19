@@ -17,7 +17,7 @@ import {
 
 import { Modal, ModalTitle, Navbar, TradingHistoryItem, TransferHistoryItem } from './Molecules';
 
-import { Balance, Dashboard, Layout } from './Organisms';
+import { Balance, Dashboard, Layout, Trading, TransfersList } from './Organisms';
 
 export {
   Balance,
@@ -39,7 +39,9 @@ export {
   Modal,
   ModalTitle,
   Navbar,
+  Trading,
   TradingHistoryItem,
   TransferHistoryItem,
+  TransfersList,
   TitleTab,
 };
