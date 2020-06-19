@@ -11,9 +11,6 @@ import 'bulma/css/bulma.min.css';
 // Emotion CSS
 import { ThemeProvider } from 'emotion-theming';
 import { GlobalStyles, theme } from 'theme';
-// Tab Titles
-import { titles } from 'utils';
-import { Footer, TitleTab } from 'components';
 
 class MelpApp extends App {
   render() {
@@ -21,12 +18,10 @@ class MelpApp extends App {
 
     return (
       <Provider store={store}>
-        <TitleTab title={titles[router.pathname]} />
         <ThemeProvider theme={theme}>
           <GlobalStyles />
           <Component {...pageProps} />
         </ThemeProvider>
-        <Footer />
       </Provider>
     );
   }
