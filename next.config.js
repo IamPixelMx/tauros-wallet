@@ -1,7 +1,6 @@
 const withCSS = require('@zeit/next-css');
 const withOffline = require('next-offline');
 const { withPlugins } = require('next-compose-plugins');
-const WebpackPwaManifest = require('webpack-pwa-manifest');
 const webpack = require('webpack');
 const path = require('path');
 require('dotenv').config();
@@ -41,51 +40,6 @@ const nextConfig = {
      * at compile time, like our environment variables
      */
     config.plugins.push(new webpack.DefinePlugin(env));
-
-    // Now let's build our manifest
-
-    // const PUBLIC_PATH = '..';
-
-    // config.plugins.push(
-    //   new WebpackPwaManifest({
-    //     filename: 'static/manifest.json',
-    //     name: 'Melp',
-    //     short_name: 'Melp',
-    //     description: 'Web App to find your favorite places to eat',
-    //     background_color: '#FFF',
-    //     theme_color: '#B2CCFF',
-    //     display: 'standalone',
-    //     orientation: 'portrait',
-    //     fingerprints: false,
-    //     inject: false,
-    //     start_url: '/',
-    //     ios: {
-    //       'apple-mobile-web-app-title': 'Melp',
-    //       'apple-mobile-web-app-status-bar-style': '#B2CCFF',
-    //     },
-    //     icons: [
-    //       {
-    //         src: path.resolve('/logo.png'),
-    //         sizes: [36, 48, 72, 96, 144, 192, 512],
-    //         destination: '/static',
-    //       },
-    //       {
-    //         src: path.resolve('/logo.png'),
-    //         sizes: [120, 152, 167, 180, 1024],
-    //         destination: '/static',
-    //         ios: true,
-    //       },
-    //       {
-    //         src: path.resolve('/logo.png'),
-    //         size: 1024,
-    //         destination: '/static',
-    //         ios: 'startup',
-    //       },
-    //     ],
-    //     includeDirectory: true,
-    //     publicPath: PUBLIC_PATH,
-    //   }),
-    // );
 
     return config;
   },
