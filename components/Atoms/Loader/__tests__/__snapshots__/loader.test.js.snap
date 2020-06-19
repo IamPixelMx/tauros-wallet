@@ -21,7 +21,7 @@ exports[`Loader Renders default Loader 1`] = `
   }
 }
 
-.emotion-3 {
+.emotion-6 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -42,7 +42,7 @@ exports[`Loader Renders default Loader 1`] = `
   padding: var(--spacing-l) 0;
 }
 
-.emotion-2 {
+.emotion-4 {
   position: relative;
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
@@ -95,13 +95,13 @@ exports[`Loader Renders default Loader 1`] = `
 }
 
 <div
-  className="emotion-3"
+  className="emotion-6 emotion-7"
 >
   <div
-    className="emotion-2"
+    className="emotion-4 emotion-5"
   >
     <div
-      className="emotion-0"
+      className="emotion-0 emotion-1"
     >
       <span
         height="5rem"
@@ -109,7 +109,7 @@ exports[`Loader Renders default Loader 1`] = `
       />
     </div>
     <div
-      className="emotion-0"
+      className="emotion-0 emotion-1"
     >
       <span
         height="5rem"
@@ -141,7 +141,7 @@ exports[`Loader Renders full screen Loader 1`] = `
   }
 }
 
-.emotion-2 {
+.emotion-4 {
   position: relative;
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
@@ -193,7 +193,7 @@ exports[`Loader Renders full screen Loader 1`] = `
   transform: translate(-50%,-50%) rotateY(180deg);
 }
 
-.emotion-3 {
+.emotion-6 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -216,13 +216,13 @@ exports[`Loader Renders full screen Loader 1`] = `
 }
 
 <div
-  className="emotion-3"
+  className="emotion-6 emotion-7"
 >
   <div
-    className="emotion-2"
+    className="emotion-4 emotion-5"
   >
     <div
-      className="emotion-0"
+      className="emotion-0 emotion-1"
     >
       <span
         height="5rem"
@@ -230,7 +230,7 @@ exports[`Loader Renders full screen Loader 1`] = `
       />
     </div>
     <div
-      className="emotion-0"
+      className="emotion-0 emotion-1"
     >
       <span
         height="5rem"
@@ -262,7 +262,7 @@ exports[`Loader Renders full screen with custom height 1`] = `
   }
 }
 
-.emotion-2 {
+.emotion-4 {
   position: relative;
   -webkit-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
@@ -314,7 +314,7 @@ exports[`Loader Renders full screen with custom height 1`] = `
   transform: translate(-50%,-50%) rotateY(180deg);
 }
 
-.emotion-3 {
+.emotion-6 {
   position: relative;
   display: -webkit-box;
   display: -webkit-flex;
@@ -337,13 +337,13 @@ exports[`Loader Renders full screen with custom height 1`] = `
 }
 
 <div
-  className="emotion-3"
+  className="emotion-6 emotion-7"
 >
   <div
-    className="emotion-2"
+    className="emotion-4 emotion-5"
   >
     <div
-      className="emotion-0"
+      className="emotion-0 emotion-1"
     >
       <span
         height="5rem"
@@ -351,7 +351,7 @@ exports[`Loader Renders full screen with custom height 1`] = `
       />
     </div>
     <div
-      className="emotion-0"
+      className="emotion-0 emotion-1"
     >
       <span
         height="5rem"

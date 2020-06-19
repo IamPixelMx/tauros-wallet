@@ -1,7 +1,571 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home Renders home 1`] = `
-<div>
-  Holiiiiiii 💕
-</div>
+.emotion-54 {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: var(--spacing-xs);
+  height: calc(100% - var(--spacing-xs));
+}
+
+.emotion-10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: var(--border-radius-s);
+  border: solid 1px var(--pale-blue);
+  padding: 0;
+  overflow-y: auto;
+  margin: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: var(--border-radius-s);
+  border: solid 1px var(--pale-blue);
+  padding: 0;
+  overflow-y: auto;
+  margin: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
+  height: 92px;
+}
+
+.emotion-0 {
+  color: var(--black-two);
+  text-align: left;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: var(--font-size-s);
+  font-weight: var(--medium-font);
+  line-height: var(--font-size-s);
+  font-weight: var(--bolder-font);
+}
+
+.emotion-0 + h2,
+.emotion-0 + h3,
+.emotion-0 + p {
+  margin-top: var(--spacing-xs);
+}
+
+.emotion-0 + div {
+  margin-top: var(--spacing-l);
+}
+
+.emotion-6 {
+  color: var(--black-two);
+  text-align: right;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: var(--medium-font);
+}
+
+.emotion-6 + h2,
+.emotion-6 + h3,
+.emotion-6 + p {
+  margin-top: var(--spacing-xs);
+}
+
+.emotion-6 + div {
+  margin-top: var(--spacing-l);
+}
+
+.emotion-44 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: var(--border-radius-s);
+  border: solid 1px var(--pale-blue);
+  padding: 0;
+  overflow-y: auto;
+  margin: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: calc(386px - (var(--spacing-l) * 2));
+  padding: var(--spacing-l) var(--spacing-xs);
+}
+
+.emotion-16 {
+  margin-top: var(--spacing-m);
+  margin-bottom: var(--spacing-m);
+}
+
+.emotion-12 {
+  min-width: 150px;
+  height: 40px;
+  margin: var(--spacing-xs);
+  font-size: var(--font-size-s);
+  font-weight: var(--medium-font);
+  line-height: 1;
+  border-radius: var(--border-radius-l);
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 var(--light-navy-blue);
+  color: var(--pale-grey);
+  background-color: var(--black-two);
+  border: solid 1px var(--light-navy-blue);
+  color: var(--pale-grey);
+  background-color: var(--pale-grey);
+  border: solid 1px var(--pale-grey);
+  color: var(--bluey-grey);
+}
+
+.emotion-12:focus {
+  outline: 0;
+}
+
+.emotion-12 + button,
+.emotion-12 + a {
+  margin-left: var(--spacing-m);
+}
+
+.emotion-14 {
+  min-width: 150px;
+  height: 40px;
+  margin: var(--spacing-xs);
+  font-size: var(--font-size-s);
+  font-weight: var(--medium-font);
+  line-height: 1;
+  border-radius: var(--border-radius-l);
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 var(--light-navy-blue);
+  color: var(--pale-grey);
+  box-shadow: 0 2px 4px 0 var(--pale-grey);
+  background-color: var(--white);
+  border: solid 1px var(--black-two);
+  color: var(--black-two);
+}
+
+.emotion-14:focus {
+  outline: 0;
+}
+
+.emotion-14 + button,
+.emotion-14 + a {
+  margin-left: var(--spacing-m);
+}
+
+.emotion-18 {
+  color: var(--black-two);
+  text-align: center;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: var(--font-size-s);
+  font-weight: var(--medium-font);
+  line-height: var(--font-size-s);
+}
+
+.emotion-18 + h2,
+.emotion-18 + h3,
+.emotion-18 + p {
+  margin-top: var(--spacing-xs);
+}
+
+.emotion-18 + div {
+  margin-top: var(--spacing-l);
+}
+
+.emotion-20 {
+  color: var(--black-two);
+  text-align: center;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: var(--medium-font);
+  font-weight: var(--bolder-font);
+}
+
+.emotion-20 + h2,
+.emotion-20 + h3,
+.emotion-20 + p {
+  margin-top: var(--spacing-xs);
+}
+
+.emotion-20 + div {
+  margin-top: var(--spacing-l);
+}
+
+.emotion-24 {
+  min-width: 150px;
+  height: 40px;
+  margin: var(--spacing-xs);
+  font-size: var(--font-size-s);
+  font-weight: var(--medium-font);
+  line-height: 1;
+  border-radius: var(--border-radius-l);
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 var(--light-navy-blue);
+  color: var(--pale-grey);
+  background-color: var(--black-two);
+  border: solid 1px var(--light-navy-blue);
+  color: var(--pale-grey);
+}
+
+.emotion-24:focus {
+  outline: 0;
+}
+
+.emotion-24 + button,
+.emotion-24 + a {
+  margin-left: var(--spacing-m);
+}
+
+.emotion-42 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: var(--black-76);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity 300ms ease-in-out;
+  transition: opacity 300ms ease-in-out;
+}
+
+.emotion-42 .emotion-31 {
+  text-align: center;
+}
+
+.emotion-40 {
+  position: relative;
+  height: 370px;
+  width: 300px;
+  max-height: calc(100vh - 150px);
+  max-width: calc(528px - (2 * var(--spacing-l)));
+  padding: var(--spacing-l);
+  border-radius: var(--border-radius-standard);
+  background-color: var(--white);
+}
+
+.emotion-26 {
+  position: absolute;
+  top: var(--spacing-m);
+  right: 0;
+  height: 42px;
+  width: 44px;
+  fill: var(--steel-66);
+  z-index: 201;
+  cursor: pointer;
+}
+
+.emotion-26:hover {
+  fill: var(--black-two);
+}
+
+.emotion-30 {
+  color: var(--black-two);
+  text-align: center;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: var(--font-size-m);
+  font-weight: var(--medium-font);
+  line-height: var(--font-size-xl);
+}
+
+.emotion-30 + h2,
+.emotion-30 + h3,
+.emotion-30 + p {
+  margin-top: var(--spacing-xs);
+}
+
+.emotion-30 + div {
+  margin-top: var(--spacing-l);
+}
+
+.emotion-48 {
+  color: var(--black-two);
+  text-align: right;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: var(--medium-font);
+  font-weight: var(--bolder-font);
+}
+
+.emotion-48 + h2,
+.emotion-48 + h3,
+.emotion-48 + p {
+  margin-top: var(--spacing-xs);
+}
+
+.emotion-48 + div {
+  margin-top: var(--spacing-l);
+}
+
+<main
+  id="main"
+>
+  <nav
+    className="navbar"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="navbar-brand"
+      >
+        <figure
+          className="image is-128x128"
+        >
+          <img
+            alt="logo"
+            src="/tauros.png"
+          />
+        </figure>
+        <span
+          className="navbar-burger"
+          data-target="navbarMenuHeroB"
+          onClick={[Function]}
+        >
+          <span />
+          <span />
+          <span />
+        </span>
+      </div>
+      <div
+        className="navbar-menu"
+        id="navbarMenuHeroB"
+      >
+        <div
+          className="navbar-end"
+        >
+          <a
+            className="navbar-item is-nice-blue"
+            href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Tarjeta Tauros
+          </a>
+          <a
+            className="navbar-item is-nice-blue"
+            href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Wallets
+          </a>
+          <a
+            className="navbar-item is-nice-blue"
+            href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Exchange
+          </a>
+          <a
+            className="navbar-item is-nice-blue"
+            href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Perfil
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div
+    className="emotion-54 emotion-55"
+  >
+    <div
+      className="emotion-10 emotion-3"
+      size="large"
+    >
+      <div
+        className="emotion-2 emotion-3"
+        size="item"
+      >
+        <h2
+          className="emotion-0 emotion-1"
+        >
+          Wallets
+        </h2>
+      </div>
+      <div
+        className="emotion-2 emotion-3"
+        size="item"
+      >
+        <span
+          height="2rem"
+          width="2rem"
+        />
+        <h2
+          className="emotion-0 emotion-1"
+        >
+          55btc
+        </h2>
+        <h3
+          className="emotion-6 emotion-7"
+        >
+          55
+        </h3>
+      </div>
+    </div>
+    <div
+      className="emotion-44 emotion-3"
+      size="medium"
+    >
+      <div
+        className="emotion-16 emotion-17"
+      >
+        <button
+          className="emotion-12 emotion-13"
+          color="black"
+          disabled={true}
+          onClick={[Function]}
+        >
+          Vender
+        </button>
+        <button
+          className="emotion-14 emotion-13"
+          color="white"
+          disabled={false}
+          onClick={[Function]}
+        >
+          Comprar
+        </button>
+      </div>
+      <h2
+        className="emotion-18 emotion-1"
+      >
+        Vender / Comprar
+      </h2>
+      <div
+        className="emotion-16 emotion-17"
+      >
+        <h3
+          className="emotion-20 emotion-7"
+        >
+          Tarjeta Tauros
+        </h3>
+      </div>
+      <button
+        className="emotion-24 emotion-13"
+        color="black"
+        disabled={false}
+        onClick={[Function]}
+      >
+        Comprar
+      </button>
+      <div
+        className="emotion-42 emotion-43"
+      >
+        <div
+          className="emotion-40 emotion-41"
+        >
+          <div
+            className="emotion-26 emotion-27"
+          >
+            <span
+              height="20"
+              onClick={[Function]}
+              title="CloseModal"
+              width="20"
+            />
+          </div>
+          <h2
+            className="emotion-18 emotion-1"
+          >
+            Estás comprando
+          </h2>
+          <h2
+            className="emotion-30 emotion-31"
+          >
+            0.0189
+          </h2>
+          BTC
+          <div
+            className="emotion-16 emotion-17"
+          >
+            Precio 
+            <br />
+            Cantidad
+          </div>
+          <div
+            className="emotion-16 emotion-17"
+          >
+            <button
+              className="emotion-24 emotion-13"
+              color="black"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Confirmar
+            </button>
+            <button
+              className="emotion-14 emotion-13"
+              color="white"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="emotion-10 emotion-3"
+      size="large"
+    >
+      <div
+        className="emotion-2 emotion-3"
+        size="item"
+      >
+        <h2
+          className="emotion-0 emotion-1"
+        >
+          Últimas transacciones
+        </h2>
+        <h3
+          className="emotion-48 emotion-7"
+        >
+          Ver completo
+        </h3>
+      </div>
+    </div>
+  </div>
+</main>
 `;

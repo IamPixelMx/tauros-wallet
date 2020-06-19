@@ -8,6 +8,7 @@ const plugins = [
       alias: { ...aliases },
     },
   ],
+  'babel-plugin-emotion',
 ];
 module.exports = {
   presets: ['next/babel'],
