@@ -7,7 +7,7 @@ import {
   LIST_TRANSFERS_URL,
 } from './constants';
 
-import axiosWithHandleError, { requestWithHandleError } from './axios';
+import axiosWithHandleError from './axios';
 import isObjectEmpty from './isObjectEmpty';
 
 export {
@@ -19,5 +19,4 @@ export {
   LIST_TRANSFERS_URL,
   axiosWithHandleError,
   isObjectEmpty,
-  requestWithHandleError,
 };

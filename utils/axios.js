@@ -1,9 +1,5 @@
 import axios from 'axios';
-const fetch = require('node-fetch');
-
-// API variables from .env
-const API_BASE_URL = process.env.API_URL || 'http://localhost:3000';
-const API_KEY = process.env.API_KEY;
+import { API_BASE_URL, API_KEY } from 'utils';
 
 // create headers
 const createHeaders = (nonce, signature) => {
@@ -41,26 +37,6 @@ const axiosWithHandleError = ({ nonce, signature, method, url }) => {
     },
   );
   return axiosInstance;
-};
-
-export const requestWithHandleError = async ({ nonce, signature, method, url }) => {
-  console.log('entro a requestWithHandleError');
-
-  const headers = createHeaders(nonce, signature);
-
-  const request = {
-    method: method,
-    headers: headers,
-  };
-
-  try {
-    const res = await fetch(API_BASE_URL + url, request);
-    console.log('response from requestWithHandleError: ', res);
-    const response = res.ok ? res.json() : { status_code: res.status, message: res.statusText };
-    return response;
-  } catch (error) {
-    console.log('error message from requestWithHandleError: ', error.message);
-  }
 };
 
 export default axiosWithHandleError;

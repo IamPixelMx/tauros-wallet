@@ -1,3 +1,3 @@
-import makeApiCall from './tauros-api';
+import { makeApiCall } from './tauros-api';
 
 export { makeApiCall };
