@@ -61,13 +61,15 @@ export const ModalStyled = styled.div`
 
 export const ModalCardStyled = styled.div`
   position: relative;
-  height: 370px;
-  width: 300px;
+  height: calc(496px - (var(--spacing-l) * 2));
+  width: calc(430px - (var(--spacing-l) * 2));
   max-height: calc(100vh - 150px);
   max-width: calc(528px - (2 * var(--spacing-l)));
   padding: var(--spacing-l);
   border-radius: var(--border-radius-standard);
   background-color: var(--white);
+  @media (max-width: 769px) {
+  }
 `;
 
 export const ModalCloseIconStyled = styled.div`

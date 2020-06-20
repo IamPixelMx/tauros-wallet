@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardTitle, CardSubtitle } from 'components';
-import { IconStyled } from './styles';
+import { IconStyled, SplitContentStyled } from './styles';
 
 const IconSize = {
   width: '48',
@@ -15,13 +15,15 @@ const getIcon = icon => {
 
 const TradingHistoryItem = ({ icon, coin, balance }) => (
   <Card size='item'>
-    <IconStyled>
-      <img src={icon} {...IconSize} />
-    </IconStyled>
-    <CardTitle textAlign='left' isBold>
-      {balance + '' + coin}
-    </CardTitle>
-    <CardSubtitle textAlign='right'>{balance}</CardSubtitle>
+    <SplitContentStyled>
+      <IconStyled>
+        <img src={icon} {...IconSize} />
+      </IconStyled>
+      <CardTitle textAlign='left' isBold>
+        {balance + '' + coin}
+      </CardTitle>
+      <CardSubtitle textAlign='right'>{balance}</CardSubtitle>
+    </SplitContentStyled>
   </Card>
 );
 

@@ -13,15 +13,27 @@ export const DashboardSplitCardsStyled = styled.div`
   grid-gap: var(--spacing-l);
   height: calc(100% - var(--spacing-xs));
   padding: var(--spacing-m);
+  margin-top: var(--spacing-m);
   /* smartphones, touchscreens */
   @media (max-width: 769px) and (hover: none) and (pointer: coarse) {
     display: flow-root;
+    margin-top: var(--spacing-xs);
   }
 `;
 
+export const DashboardSplitContentStyled = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--spacing-m);
+  height: calc(100% - var(--spacing-xs));
+  padding: var(--spacing-m);
+`;
+
 export const DashboardContentStyled = styled.div`
-  margin-top: var(--spacing-xl);
-  margin-bottom: var(--spacing-l);
   text-align: center;
+  @media (max-width: 769px) and (hover: none) and (pointer: coarse) {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-l);
+  }
   ${withPadding};
 `;

@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 
 import { Button, Card, CardSubtitle, CardTitle, Modal, ModalTitle } from 'components';
-import { DashboardContentStyled, DashboardSplitCardsStyled } from '../Dashboard/styles';
+import {
+  DashboardContentStyled,
+  DashboardSplitCardsStyled,
+  DashboardSplitContentStyled,
+} from '../Dashboard/styles';
+import { CreditCardStyled } from './styles';
 
 const Trading = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -12,12 +17,16 @@ const Trading = () => {
 
   return (
     <Card hasPadding={true} size='medium'>
-      <Button color='grey'>Vender</Button>
-      <Button color='white'>Comprar</Button>
       <DashboardContentStyled>
-        <CardSubtitle textAlign='center' isBold>
-          Tarjeta Tauros
-        </CardSubtitle>
+        <Button color='grey'>Vender</Button>
+        <Button color='white'>Comprar</Button>
+      </DashboardContentStyled>
+      <DashboardContentStyled>
+        <CreditCardStyled>
+          <CardSubtitle textAlign='center' isBold>
+            Tarjeta Tauros
+          </CardSubtitle>
+        </CreditCardStyled>
       </DashboardContentStyled>
       <DashboardContentStyled>
         <Button onClick={() => setIsModalOpen(true)} size='large'>

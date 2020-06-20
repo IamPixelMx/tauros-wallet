@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { NavbarItem } from '.';
+import { NavbarStyled } from './styles';
 
 const NAV_ITEMS = [
   { page: 'Tarjeta Tauros', route: '/' },
