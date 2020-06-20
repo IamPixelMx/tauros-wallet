@@ -1,10 +1,15 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
-const hasPadding = ({ padding }) =>
-  padding &&
+const withPadding = ({ hasPadding }) =>
+  hasPadding &&
   css`
-    padding: var(--spacing-xl);
+    padding: var(--spacing-s);
+  `;
+const withOverflow = ({ hasOverflow }) =>
+  hasOverflow &&
+  css`
+    overflow-y: auto;
   `;
 
 const itemCardStyled = ({ size }) =>
@@ -29,10 +34,10 @@ export const CardStyled = styled.div`
   border-radius: var(--border-radius-s);
   border: solid 1px var(--pale-blue);
   padding: 0;
-  overflow-y: auto;
-  margin: var(--spacing-xs);
+  margin: 0;
   margin-top: var(--spacing-xs);
-  ${hasPadding}
+  ${withPadding}
+  ${withOverflow}
   ${itemCardStyled}
   ${mediumCardStyled}
 `;

@@ -1,48 +1,41 @@
 import axios from 'axios';
-
-// API variables from .env
-const API_BASE_URL = process.env.API_URL || 'https://staging.api.tauros.io/api';
-const API_KEY = process.env.API_KEY;
+import { API_BASE_URL, API_KEY } from 'utils';
 
 // create headers
 const createHeaders = (nonce, signature) => {
-  return {
-    Authorization: 'Bearer ' + API_KEY,
+  const headers = {
+    Authorization: `Bearer ${API_KEY}`,
     'Content-Type': 'application/json',
     'Taur-Nonce': nonce,
     'Taur-Signature': signature,
   };
+  return headers;
 };
 
-const axiosWithHandleError = async ({ nonce, signature, method, url, body }) => {
+const axiosWithHandleError = ({ nonce, signature, method, url, body }) => {
   const headers = createHeaders(nonce, signature);
   // make an Axios instance
 
-  const axiosInstance = axios.create({
-    baseURL: API_BASE_URL,
-    url,
-    headers,
-    method,
-    body,
-  });
+  const paramsInstance = body
+    ? { baseURL: API_BASE_URL, url, headers, method, body }
+    : { baseURL: API_BASE_URL, url, headers, method };
+
+  const axiosInstance = axios.create(paramsInstance);
 
   axiosInstance.interceptors.response.use(
     // Do something with response data
     res => {
-      const responseJSON = res.ok
-        ? res.json()
-        : { status_code: res.status, message: res.statusText };
-      console.log('responseJSON: ', responseJSON);
+      return res;
     },
     // Do something with response error
     err => {
       console.log(err);
       const responseError = new Error(err.message);
       console.log('responseError', responseError);
+      return responseError;
     },
   );
-
-  return await axiosInstance;
+  return axiosInstance;
 };
 
 export default axiosWithHandleError;

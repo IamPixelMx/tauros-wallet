@@ -16,7 +16,7 @@ const TitleTab = ({ title, favico }) => (
 );
 
 TitleTab.defaultProps = {
-  title: 'Tauros Wallet',
+  title: 'Tauros',
   favico: '/favicon.ico',
 };
 

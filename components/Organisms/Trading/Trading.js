@@ -11,9 +11,9 @@ const Trading = () => {
   };
 
   return (
-    <Card size='medium'>
+    <Card hasPadding={true}>
       <DashboardSplitCardsStyled>
-        <Button disabled>Vender</Button>
+        <Button color='grey'>Vender</Button>
         <Button color='white'>Comprar</Button>
       </DashboardSplitCardsStyled>
       <DashboardContentStyled>

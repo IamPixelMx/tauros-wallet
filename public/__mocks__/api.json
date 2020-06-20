@@ -1,0 +1,87 @@
+{
+  "success": true,
+  "payload": {
+    "crypto": [
+      {
+        "coin": "BTC",
+        "coin_name": "Bitcoin",
+        "min_withdraw": "0.00050000",
+        "fee_withdraw": 0.0002,
+        "confirmations_required": 4,
+        "coin_icon": "https://static.coinbtr.com/media/coins/BTC_9ItLsUF.png",
+        "available_to_deposit": true,
+        "available_to_withdraw": true
+      },
+      {
+        "coin": "BEMB",
+        "coin_name": "Bitcoin Embassy Bar",
+        "min_withdraw": "5.00000000",
+        "fee_withdraw": 1,
+        "confirmations_required": 10,
+        "coin_icon": "https://static.coinbtr.com/media/coins/BEMB_Po8mN3B.png",
+        "available_to_deposit": false,
+        "available_to_withdraw": true
+      },
+      {
+        "coin": "ZEC",
+        "coin_name": "ZCash",
+        "min_withdraw": "0.08500000",
+        "fee_withdraw": 0.05,
+        "confirmations_required": 25,
+        "coin_icon": "https://static.coinbtr.com/media/coins/ZEC_hecsnl7.png",
+        "available_to_deposit": true,
+        "available_to_withdraw": false
+      },
+      {
+        "coin": "LTC",
+        "coin_name": "Litecoin",
+        "min_withdraw": "0.00500000",
+        "fee_withdraw": 0.0035,
+        "confirmations_required": 6,
+        "coin_icon": "https://static.coinbtr.com/media/coins/LTC_O4Ktdtr.png",
+        "available_to_deposit": true,
+        "available_to_withdraw": true
+      },
+      {
+        "coin": "XLM",
+        "coin_name": "Stellar",
+        "min_withdraw": "2.00000000",
+        "fee_withdraw": 1,
+        "confirmations_required": 10,
+        "coin_icon": "https://static.coinbtr.com/media/coins/XLM_UKjRoth.png",
+        "available_to_deposit": true,
+        "available_to_withdraw": true
+      },
+      {
+        "coin": "BCH",
+        "coin_name": "Bitcoin Cash",
+        "min_withdraw": "0.00200000",
+        "fee_withdraw": 0.001,
+        "confirmations_required": 6,
+        "coin_icon": "https://static.coinbtr.com/media/coins/BCH_IlW6auL.png",
+        "available_to_deposit": true,
+        "available_to_withdraw": true
+      },
+      {
+        "coin": "DASH",
+        "coin_name": "Dash",
+        "min_withdraw": "0.00400000",
+        "fee_withdraw": 0.002,
+        "confirmations_required": 6,
+        "coin_icon": "https://static.coinbtr.com/media/coins/DASH_7yHBf0P.png",
+        "available_to_deposit": true,
+        "available_to_withdraw": true
+      }
+    ],
+    "fiat": [
+      {
+        "coin": "MXN",
+        "coin_name": "Pesos Mexicanos",
+        "min_withdraw": "10.00000000",
+        "fee_withdraw": "0.0000",
+        "country": "Mexico",
+        "coin_icon": "https://static.coinbtr.com/media/coins/MXN_LmmSZ71.png"
+      }
+    ]
+  }
+}

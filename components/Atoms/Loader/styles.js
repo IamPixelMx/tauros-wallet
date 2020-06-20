@@ -32,7 +32,7 @@ export const LoaderStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 5rem;
+  min-height: 13rem;
   max-width: 100vw;
   width: 100%;
   background-color: var(--black-76);
@@ -56,10 +56,10 @@ export const IconStyled = styled.div`
   top: 50%;
   left: 50%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   width: 5rem;
   height: 5rem;
+  align-items: center;
+  justify-content: center;
   backface-visibility: hidden;
   &:first-of-type {
     z-index: 2;

@@ -7,8 +7,8 @@ import { getBalancesListError, getBalancesListSuccess } from '../actions';
 function* getData() {
   try {
     const paramsObj = { method: 'GET', url: LIST_BALANCES_URL, API_SECRET };
-    const request = yield call(makeApiCall, paramsObj);
-    yield put(getBalancesListSuccess(request));
+    const dataRes = yield call(makeApiCall, paramsObj);
+    yield put(getBalancesListSuccess(dataRes.crypto));
   } catch (error) {
     console.error(error);
     yield put(getBalancesListError(error));
