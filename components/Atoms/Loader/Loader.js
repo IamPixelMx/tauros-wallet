@@ -4,7 +4,7 @@ import { IconStyled, LoaderStyled, LoaderIconsStyled } from './styles';
 import { TaurosDarkIcon } from 'components';
 
 const IconSize = {
-  width: '55rem',
+  width: '3rem',
 };
 
 const Loader = ({ isFullScreen, customHeight }) => (
