@@ -4,7 +4,7 @@ import { Button, Card, CardSubtitle, CardTitle, TransferHistoryItem } from 'comp
 
 const TransfersList = () => {
   return (
-    <Card hasPadding={false}>
+    <Card hasPadding={false} hasOverflow={true}>
       <Card size='item'>
         <CardTitle textAlign='left' isBold>
           Últimas transacciones

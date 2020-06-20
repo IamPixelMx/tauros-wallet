@@ -4,8 +4,8 @@ import { Card, CardTitle, CardSubtitle } from 'components';
 import * as Icons from 'components/Atoms/Icons';
 
 const IconSize = {
-  width: '2rem',
-  height: '2rem',
+  width: '55',
+  height: '55',
 };
 
 const getIcon = icon => {

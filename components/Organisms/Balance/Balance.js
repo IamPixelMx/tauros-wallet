@@ -15,7 +15,7 @@ const Balance = () => {
   console.log('====================================');
 
   return (
-    <Card hasPadding={false}>
+    <Card hasPadding={false} hasOverflow={true}>
       <Card size='item'>
         <CardTitle textAlign='left' isBold>
           Wallets
