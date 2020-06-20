@@ -29,7 +29,7 @@ const mediumCardStyled = ({ size }) =>
   css`
     align-items: center;
     justify-content: center;
-    height: calc(493px - (var(--spacing-l) * 2));
+    height: calc(503px - (var(--spacing-l) * 2));
     padding: var(--spacing-l) var(--spacing-xs);
   `;
 

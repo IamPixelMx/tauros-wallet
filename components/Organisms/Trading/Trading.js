@@ -36,6 +36,7 @@ const Trading = () => {
           <p>Precio</p>
           <p>Cantidad</p>
         </DashboardContentStyled>
+        <br />
         <DashboardContentStyled>
           <Button size='large' onClick={() => setIsModalOpen(false)}>
             Confirmar
