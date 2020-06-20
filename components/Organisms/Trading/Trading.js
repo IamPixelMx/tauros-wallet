@@ -11,24 +11,26 @@ const Trading = () => {
   };
 
   return (
-    <Card hasPadding={true}>
-      <DashboardSplitCardsStyled>
-        <Button color='grey'>Vender</Button>
-        <Button color='white'>Comprar</Button>
-      </DashboardSplitCardsStyled>
+    <Card hasPadding={true} size='medium'>
+      <Button color='grey'>Vender</Button>
+      <Button color='white'>Comprar</Button>
       <DashboardContentStyled>
         <CardSubtitle textAlign='center' isBold>
           Tarjeta Tauros
         </CardSubtitle>
       </DashboardContentStyled>
-      <Button onClick={() => setIsModalOpen(true)}>Comprar</Button>
+      <DashboardContentStyled>
+        <Button onClick={() => setIsModalOpen(true)} size='large'>
+          Comprar
+        </Button>
+      </DashboardContentStyled>
       <Modal isOpen={isModalOpen} onModalClose={onModalClose}>
         <CardTitle textAlign='center'>Estás comprando</CardTitle>
         <ModalTitle textAlign='center'>0.0189</ModalTitle>BTC
-        <DashboardContentStyled>
-          Precio <br />
-          Cantidad
-        </DashboardContentStyled>
+        <div>
+          <p>Precio</p>
+          <p>Cantidad</p>
+        </div>
         <DashboardContentStyled>
           <Button onClick={() => setIsModalOpen(false)}>Confirmar</Button>
           <Button onClick={() => setIsModalOpen(false)} color='white'>

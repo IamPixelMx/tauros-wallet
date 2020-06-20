@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, CardTitle, CardSubtitle } from 'components';
-import * as Icons from 'components/Atoms/Icons';
+import { IconStyled } from './styles';
 
 const IconSize = {
-  width: '55',
-  height: '55',
+  width: '48',
+  height: '48',
 };
 
 const getIcon = icon => {
@@ -15,9 +15,9 @@ const getIcon = icon => {
 
 const TradingHistoryItem = ({ icon, coin, balance }) => (
   <Card size='item'>
-    <figure>
+    <IconStyled>
       <img src={icon} {...IconSize} />
-    </figure>
+    </IconStyled>
     <CardTitle textAlign='left' isBold>
       {balance + '' + coin}
     </CardTitle>

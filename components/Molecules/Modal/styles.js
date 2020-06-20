@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
-export const modalOpen = ({ isOpen }) =>
+const modalOpen = ({ isOpen }) =>
   isOpen &&
   css`
+    display: flex;
     opacity: 1;
     pointer-events: auto;
     transition: opacity 300ms ease-in-out;
@@ -46,7 +47,7 @@ export const ModalStyled = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   background-color: var(--black-76);
