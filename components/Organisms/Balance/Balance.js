@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { getBalancesList, getState } from 'store/selectors';
 
@@ -21,13 +21,13 @@ const Balance = () => {
           Wallets
         </CardTitle>
       </Card>
-      {/* {balancesList ? (
+      {balancesList === null ? (
+        <Loader />
+      ) : (
         balancesList.map(({ coin_name, coin_icon, min_withdraw }) => (
           <TradingHistoryItem coin={coin_name} icon={coin_icon} balance={min_withdraw} />
         ))
-      ) : (
-        <Loader />
-      )} */}
+      )}
     </Card>
   );
 };

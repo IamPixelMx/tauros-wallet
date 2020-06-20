@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getState } from 'store/selectors';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { GET_BALANCES_LIST } from 'store/constants';
 
 import { Dashboard, Layout } from 'components';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const state = useSelector(getState);
 
   /*
    * Use 'useEffect' to get Melp data
