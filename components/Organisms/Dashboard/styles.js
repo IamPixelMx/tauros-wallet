@@ -26,6 +26,9 @@ export const DashboardSplitContentStyled = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-gap: var(--spacing-m);
   padding: var(--spacing-m);
+  @media (max-width: 769px) {
+    padding: var(--spacing-xs);
+  }
 `;
 
 export const DashboardContentStyled = styled.div`
