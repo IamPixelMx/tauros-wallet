@@ -19,7 +19,7 @@ const balancesReducer = (state = INITIAL_STATE, { type, payload = {} }) => {
     case GET_BALANCES_LIST_SUCCESS:
       return {
         ...state,
-        balancesList: { ...payload },
+        balancesList: payload,
         loading: false,
         error: '',
       };
