@@ -8,24 +8,28 @@ const IconSize = {
   height: '48',
 };
 
-const getIcon = icon => {
-  const CoinIcon = Icons[icon];
-  return <CoinIcon {...IconSize} />;
-};
+const TradingHistoryItem = ({ icon, coin, balance }) => {
+  const handleBalance = num => {
+    return Number.parseFloat(num).toFixed(4);
+  };
+  const amount = handleBalance(balance);
 
-const TradingHistoryItem = ({ icon, coin, balance }) => (
-  <Card size='item'>
-    <SplitContentStyled>
-      <IconStyled>
-        <img src={icon} {...IconSize} />
-      </IconStyled>
-      <CardTitle textAlign='left' isBold>
-        {balance + '' + coin}
-      </CardTitle>
-      <CardSubtitle textAlign='right'>{balance}</CardSubtitle>
-    </SplitContentStyled>
-  </Card>
-);
+  return (
+    <Card size='item'>
+      <SplitContentStyled>
+        <IconStyled>
+          <img src={icon} {...IconSize} />
+        </IconStyled>
+        <div>
+          <CardTitle textAlign='right' isBold>
+            {coin}
+          </CardTitle>
+          <CardSubtitle textAlign='right'>{amount}</CardSubtitle>
+        </div>
+      </SplitContentStyled>
+    </Card>
+  );
+};
 
 TradingHistoryItem.defaultProps = {
   coin: 'MXN',

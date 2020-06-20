@@ -19,7 +19,7 @@ const itemCardStyled = ({ size }) =>
   css`
     height: 92px;
     @media (max-width: 769px) {
-      height: 60px;
+      height: 70px;
       margin-bottom: var(--spacing-xs);
     }
   `;
@@ -46,7 +46,7 @@ export const CardStyled = styled.div`
   ${withPadding}
   ${withOverflow}
   @media (max-width: 769px) {
-    padding: var(--spacing-xs);
+    padding: 0;
     display: flow-root;
     margin-bottom: var(--spacing-l);
   }
