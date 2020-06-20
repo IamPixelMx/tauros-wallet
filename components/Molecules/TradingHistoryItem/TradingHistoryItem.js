@@ -20,10 +20,12 @@ const TradingHistoryItem = ({ icon, coin, balance }) => {
         <IconStyled>
           <img src={icon} {...IconSize} />
         </IconStyled>
-        <CardTitle textAlign='left' isBold>
-          {amount + '' + coin}
-        </CardTitle>
-        <CardSubtitle textAlign='right'>{amount}</CardSubtitle>
+        <div>
+          <CardTitle textAlign='right' isBold>
+            {coin}
+          </CardTitle>
+          <CardSubtitle textAlign='right'>{amount}</CardSubtitle>
+        </div>
       </SplitContentStyled>
     </Card>
   );
