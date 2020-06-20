@@ -30,10 +30,14 @@ export const DashboardSplitContentStyled = styled.div`
 `;
 
 export const DashboardContentStyled = styled.div`
-  text-align: center;
+  margin-bottom: var(--spacing-m);
+
   @media (max-width: 769px) and (hover: none) and (pointer: coarse) {
     margin-top: var(--spacing-xl);
     margin-bottom: var(--spacing-l);
+  }
+  button {
+    margin: var(--spacing-s) 0;
   }
   ${withPadding};
 `;

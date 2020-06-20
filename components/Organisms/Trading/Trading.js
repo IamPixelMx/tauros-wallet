@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 
 import { Button, Card, CardSubtitle, CardTitle, Modal, ModalTitle } from 'components';
-import {
-  DashboardContentStyled,
-  DashboardSplitCardsStyled,
-  DashboardSplitContentStyled,
-} from '../Dashboard/styles';
+import { DashboardContentStyled, DashboardSplitContentStyled } from '../Dashboard/styles';
 import { CreditCardStyled } from './styles';
 
 const Trading = () => {
@@ -17,10 +13,10 @@ const Trading = () => {
 
   return (
     <Card hasPadding={true} size='medium'>
-      <DashboardContentStyled>
+      <DashboardSplitContentStyled>
         <Button color='grey'>Vender</Button>
         <Button color='white'>Comprar</Button>
-      </DashboardContentStyled>
+      </DashboardSplitContentStyled>
       <DashboardContentStyled>
         <CreditCardStyled>
           <CardSubtitle textAlign='center' isBold>
@@ -36,13 +32,15 @@ const Trading = () => {
       <Modal isOpen={isModalOpen} onModalClose={onModalClose}>
         <CardTitle textAlign='center'>Estás comprando</CardTitle>
         <ModalTitle textAlign='center'>0.0189</ModalTitle>BTC
-        <div>
+        <DashboardContentStyled>
           <p>Precio</p>
           <p>Cantidad</p>
-        </div>
+        </DashboardContentStyled>
         <DashboardContentStyled>
-          <Button onClick={() => setIsModalOpen(false)}>Confirmar</Button>
-          <Button onClick={() => setIsModalOpen(false)} color='white'>
+          <Button size='large' onClick={() => setIsModalOpen(false)}>
+            Confirmar
+          </Button>
+          <Button size='large' onClick={() => setIsModalOpen(false)} color='white'>
             Cancelar
           </Button>
         </DashboardContentStyled>

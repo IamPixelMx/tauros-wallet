@@ -31,13 +31,12 @@ const greyButtonStyled = ({ color }) =>
 const largeButton = ({ size }) =>
   size === 'large' &&
   css`
-    width: 333px;
+    width: 303px;
   `;
 
 export const ButtonStyled = styled.button`
   min-width: 140px;
   height: 40px;
-  margin: var(--spacing-xs);
   font-size: var(--font-size-s);
   font-weight: var(--medium-font);
   line-height: 1;
@@ -51,7 +50,6 @@ export const ButtonStyled = styled.button`
   &:focus {
     outline: 0;
   }
-  & + button,
   & + a {
     margin-left: var(--spacing-m);
   }
