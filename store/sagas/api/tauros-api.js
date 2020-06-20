@@ -37,21 +37,16 @@ const getParamsHeaders = ({ method, url, API_SECRET, data }) => {
 
 const makeApiCall = async params => {
   const paramsHeaders = getParamsHeaders(params);
-  console.log('=================PARAMS HEADERS===================');
-  console.log(paramsHeaders);
-  console.log('====================================');
   const axios = axiosWithHandleError(paramsHeaders);
-  const request = await requestWithHandleError(paramsHeaders);
-  console.log('==============RESPONSE REQUEST=====================');
-  console.log(request);
-  console.log('====================================');
+  // const request = await requestWithHandleError(paramsHeaders);
+
   const response = await axios();
-  console.log('==============RESPONSE AXIOS=====================');
-  console.log(response);
+  const data = await response.data;
+  const payload = await data.payload;
+  console.log('==============PAYLOAD AXIOS IN MAKE API CALL=====================');
+  console.log(payload);
   console.log('====================================');
-  const { data } = response;
-  const res = data && response;
-  return res;
+  return payload;
 };
 
 export default makeApiCall;

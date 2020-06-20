@@ -2,7 +2,7 @@ import axios from 'axios';
 const fetch = require('node-fetch');
 
 // API variables from .env
-const API_BASE_URL = process.env.API_URL || 'https://staging.api.tauros.io';
+const API_BASE_URL = process.env.API_URL || 'http://localhost:3000';
 const API_KEY = process.env.API_KEY;
 
 // create headers
@@ -30,16 +30,14 @@ const axiosWithHandleError = ({ nonce, signature, method, url }) => {
   axiosInstance.interceptors.response.use(
     // Do something with response data
     res => {
-      const responseJSON = res.ok
-        ? res.json()
-        : { status_code: res.status, message: res.statusText };
-      console.log('responseJSON: ', responseJSON);
+      return res;
     },
     // Do something with response error
     err => {
       console.log(err);
       const responseError = new Error(err.message);
       console.log('responseError', responseError);
+      return responseError;
     },
   );
   return axiosInstance;

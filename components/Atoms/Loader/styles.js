@@ -58,8 +58,6 @@ export const IconStyled = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5rem;
-  height: 5rem;
   backface-visibility: hidden;
   &:first-of-type {
     z-index: 2;
