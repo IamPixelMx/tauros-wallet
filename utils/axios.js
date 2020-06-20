@@ -12,16 +12,15 @@ const createHeaders = (nonce, signature) => {
   return headers;
 };
 
-const axiosWithHandleError = ({ nonce, signature, method, url }) => {
+const axiosWithHandleError = ({ nonce, signature, method, url, body }) => {
   const headers = createHeaders(nonce, signature);
   // make an Axios instance
 
-  const axiosInstance = axios.create({
-    baseURL: API_BASE_URL,
-    url,
-    headers,
-    method,
-  });
+  const paramsInstance = body
+    ? { baseURL: API_BASE_URL, url, headers, method, body }
+    : { baseURL: API_BASE_URL, url, headers, method };
+
+  const axiosInstance = axios.create(paramsInstance);
 
   axiosInstance.interceptors.response.use(
     // Do something with response data

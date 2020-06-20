@@ -8,6 +8,8 @@ import {
 } from './constants';
 
 import axiosWithHandleError from './axios';
+import getNonce from './getNonce';
+import getParamsDataObj from './getParamsDataObj';
 import isObjectEmpty from './isObjectEmpty';
 
 export {
@@ -18,5 +20,7 @@ export {
   LIST_BALANCES_URL,
   LIST_TRANSFERS_URL,
   axiosWithHandleError,
+  getNonce,
+  getParamsDataObj,
   isObjectEmpty,
 };

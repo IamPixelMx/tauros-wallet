@@ -25,6 +25,7 @@
     "@zeit/next-css": "^1.0.1",
     "axios": "^0.19.2",
     "bulma": "^0.8.2",
+    "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
     "emotion-theming": "^10.0.27",
     "express": "^4.17.1",

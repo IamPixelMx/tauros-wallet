@@ -1,23 +1,9 @@
 // import crypto from 'crypto';
-import { axiosWithHandleError } from 'utils';
-
-// const getParamsDataObj = data => {
-//   const dataToString = new URLSearchParams(data).toString();
-//   const body = JSON.stringify(data);
-
-//   return { dataToString, body };
-// };
-
-// const getNonce = () => {
-//   // create unique nonce
-//   const prevNonce = Date.now() / 1000;
-//   const nonce = prevNonce.toString().replace('.', '');
-//   return nonce;
-// };
+import { axiosWithHandleError, getParamsDataObj, getNonce } from 'utils';
 
 // const getParamsHeaders = ({ method, url, API_SECRET, data }) => {
 //   const nonce = getNonce();
-//   const paramsDataObj = data ? getParamsDataObj : { dataToString: null, body: null };
+//   const paramsDataObj = data ? getParamsDataObj(data) : { dataToString: null, body: null };
 //   const { dataToString, body } = paramsDataObj;
 
 //   // concatenate message
@@ -35,13 +21,16 @@ import { axiosWithHandleError } from 'utils';
 //   return body ? { nonce, signature, method, url, body } : { nonce, signature, method, url };
 // };
 
-// const makeApiCall = async params => {
+// export const makeApiCall = async params => {
 //   const paramsHeaders = getParamsHeaders(params);
 //   const axios = axiosWithHandleError(paramsHeaders);
 //   const response = await axios();
 //   const data = await response.data;
+//   console.log('====DATA AXIOS IN MAKE API CALL======');
+//   console.log(data);
+//   console.log('====================================');
 //   const payload = await data.payload;
-//   console.log('==============PAYLOAD AXIOS IN MAKE API CALL=====================');
+//   console.log('====PAYLOAD AXIOS IN MAKE API CALL=====');
 //   console.log(payload);
 //   console.log('====================================');
 //   return payload;
@@ -50,9 +39,5 @@ import { axiosWithHandleError } from 'utils';
 export const makeApiCall = async () => {
   const response = axiosWithHandleError();
   const { data } = response;
-  // const MelpData = JSON.parse(data);
-
   return data;
 };
-
-// export default makeApiCall;
