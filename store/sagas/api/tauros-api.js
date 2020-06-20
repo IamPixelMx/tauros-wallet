@@ -1,5 +1,5 @@
 import crypto from 'crypto';
-import { axiosWithHandleError } from 'utils';
+import { axiosWithHandleError, requestWithHandleError } from 'utils';
 
 const getParamsDataObj = data => {
   const dataToString = new URLSearchParams(data).toString();
@@ -24,12 +24,14 @@ const getParamsHeaders = ({ method, url, API_SECRET, data }) => {
   const prevMessage = nonce + method.toUpperCase() + url;
   const afterMessage = dataToString && prevMessage + dataToString;
   let message = afterMessage ? afterMessage : prevMessage;
+
   let api_sha256 = crypto.createHash('sha256').update(message).digest();
 
   // create a sha512 hmac with the secret
   let hmac = crypto.createHmac('sha512', Buffer.from(API_SECRET, 'base64'));
 
   let signature = hmac.update(api_sha256).digest('base64');
+
   return body ? { nonce, signature, method, url, body } : { nonce, signature, method, url };
 };
 
@@ -38,9 +40,13 @@ const makeApiCall = async params => {
   console.log('=================PARAMS HEADERS===================');
   console.log(paramsHeaders);
   console.log('====================================');
-  const axios = await axiosWithHandleError(paramsHeaders);
+  const axios = axiosWithHandleError(paramsHeaders);
+  const request = await requestWithHandleError(paramsHeaders);
+  console.log('==============RESPONSE REQUEST=====================');
+  console.log(request);
+  console.log('====================================');
   const response = await axios();
-  console.log('==============RESPONSE=====================');
+  console.log('==============RESPONSE AXIOS=====================');
   console.log(response);
   console.log('====================================');
   const { data } = response;

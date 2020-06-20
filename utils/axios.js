@@ -1,20 +1,22 @@
 import axios from 'axios';
+const fetch = require('node-fetch');
 
 // API variables from .env
-const API_BASE_URL = process.env.API_URL || 'https://staging.api.tauros.io/api';
+const API_BASE_URL = process.env.API_URL || 'https://staging.api.tauros.io';
 const API_KEY = process.env.API_KEY;
 
 // create headers
 const createHeaders = (nonce, signature) => {
-  return {
-    Authorization: 'Bearer ' + API_KEY,
+  const headers = {
+    Authorization: `Bearer ${API_KEY}`,
     'Content-Type': 'application/json',
     'Taur-Nonce': nonce,
     'Taur-Signature': signature,
   };
+  return headers;
 };
 
-const axiosWithHandleError = async ({ nonce, signature, method, url, body }) => {
+const axiosWithHandleError = ({ nonce, signature, method, url }) => {
   const headers = createHeaders(nonce, signature);
   // make an Axios instance
 
@@ -23,7 +25,6 @@ const axiosWithHandleError = async ({ nonce, signature, method, url, body }) => 
     url,
     headers,
     method,
-    body,
   });
 
   axiosInstance.interceptors.response.use(
@@ -41,8 +42,27 @@ const axiosWithHandleError = async ({ nonce, signature, method, url, body }) => 
       console.log('responseError', responseError);
     },
   );
+  return axiosInstance;
+};
 
-  return await axiosInstance;
+export const requestWithHandleError = async ({ nonce, signature, method, url }) => {
+  console.log('entro a requestWithHandleError');
+
+  const headers = createHeaders(nonce, signature);
+
+  const request = {
+    method: method,
+    headers: headers,
+  };
+
+  try {
+    const res = await fetch(API_BASE_URL + url, request);
+    console.log('response from requestWithHandleError: ', res);
+    const response = res.ok ? res.json() : { status_code: res.status, message: res.statusText };
+    return response;
+  } catch (error) {
+    console.log('error message from requestWithHandleError: ', error.message);
+  }
 };
 
 export default axiosWithHandleError;
