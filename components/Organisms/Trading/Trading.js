@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 import { Button, Card, CardSubtitle, CardTitle, Modal, ModalTitle } from 'components';
-import { DashboardContentStyled, DashboardSplitCardsStyled } from '../Dashboard/styles';
+import { DashboardContentStyled, DashboardSplitContentStyled } from '../Dashboard/styles';
+import { CreditCardStyled } from './styles';
 
 const Trading = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,27 +12,36 @@ const Trading = () => {
   };
 
   return (
-    <Card hasPadding={true}>
-      <DashboardSplitCardsStyled>
+    <Card hasPadding={true} size='medium'>
+      <DashboardSplitContentStyled>
         <Button color='grey'>Vender</Button>
         <Button color='white'>Comprar</Button>
-      </DashboardSplitCardsStyled>
+      </DashboardSplitContentStyled>
       <DashboardContentStyled>
-        <CardSubtitle textAlign='center' isBold>
-          Tarjeta Tauros
-        </CardSubtitle>
+        <CreditCardStyled>
+          <CardSubtitle textAlign='center' isBold>
+            Tarjeta Tauros
+          </CardSubtitle>
+        </CreditCardStyled>
       </DashboardContentStyled>
-      <Button onClick={() => setIsModalOpen(true)}>Comprar</Button>
+      <DashboardContentStyled>
+        <Button onClick={() => setIsModalOpen(true)} size='large'>
+          Comprar
+        </Button>
+      </DashboardContentStyled>
       <Modal isOpen={isModalOpen} onModalClose={onModalClose}>
         <CardTitle textAlign='center'>Estás comprando</CardTitle>
         <ModalTitle textAlign='center'>0.0189</ModalTitle>BTC
         <DashboardContentStyled>
-          Precio <br />
-          Cantidad
+          <p>Precio</p>
+          <p>Cantidad</p>
         </DashboardContentStyled>
+        <br />
         <DashboardContentStyled>
-          <Button onClick={() => setIsModalOpen(false)}>Confirmar</Button>
-          <Button onClick={() => setIsModalOpen(false)} color='white'>
+          <Button size='large' onClick={() => setIsModalOpen(false)}>
+            Confirmar
+          </Button>
+          <Button size='large' onClick={() => setIsModalOpen(false)} color='white'>
             Cancelar
           </Button>
         </DashboardContentStyled>

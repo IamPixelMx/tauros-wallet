@@ -32,7 +32,7 @@ const theme = {
     s: '.5rem',
     m: '1rem',
     l: '2rem',
-    xl: '5rem',
+    xl: '3rem',
   },
   borderRadius: {
     standard: '18px',

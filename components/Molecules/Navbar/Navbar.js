@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { NavbarItem } from '.';
+import { NavbarStyled } from './styles';
 
 const NAV_ITEMS = [
   { page: 'Tarjeta Tauros', route: '/' },
@@ -25,11 +26,11 @@ const Navbar = props => {
     <nav className='navbar'>
       <div className='container'>
         <div className='navbar-brand'>
-          <figure className='image is-128x128'>
-            <img src='/tauros.png' alt='logo' />
-          </figure>
+          <a className='navbar-item'>
+            <img src='/tauros.png' width='112' height='28' alt='Tauros' />
+          </a>
           <span
-            className={isNavOpen ? 'navbar-burger is-active' : 'navbar-burger'}
+            className={isNavOpen ? 'navbar-burger burger is-active' : 'navbar-burger burger'}
             data-target='navbarMenuHeroB'
             onClick={toggleNav}
           >

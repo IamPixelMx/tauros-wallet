@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 
-export const blackButtonStyled = ({ color }) =>
+const blackButtonStyled = ({ color }) =>
   ['primary', 'black'].includes(color.toLowerCase()) &&
   css`
     background-color: var(--black-two);
@@ -10,7 +10,7 @@ export const blackButtonStyled = ({ color }) =>
     color: var(--pale-grey);
   `;
 
-export const whiteButtonStyled = ({ color }) =>
+const whiteButtonStyled = ({ color }) =>
   ['secondary', 'white'].includes(color.toLowerCase()) &&
   css`
     box-shadow: 0 2px 4px 0 var(--pale-grey);
@@ -19,18 +19,24 @@ export const whiteButtonStyled = ({ color }) =>
     color: var(--black-two);
   `;
 
-export const disabledButtonStyled = ({ color }) =>
+const greyButtonStyled = ({ color }) =>
   ['inactive', 'grey'].includes(color.toLowerCase()) &&
   css`
+    box-shadow: 0 2px 4px 0 var(--pale-grey);
     background-color: var(--pale-grey);
     border: solid 1px var(--pale-grey);
     color: var(--bluey-grey);
   `;
 
+const largeButton = ({ size }) =>
+  size === 'large' &&
+  css`
+    width: 303px;
+  `;
+
 export const ButtonStyled = styled.button`
-  min-width: 150px;
+  min-width: 140px;
   height: 40px;
-  margin: var(--spacing-xs);
   font-size: var(--font-size-s);
   font-weight: var(--medium-font);
   line-height: 1;
@@ -39,11 +45,11 @@ export const ButtonStyled = styled.button`
   color: var(--pale-grey);
   ${blackButtonStyled};
   ${whiteButtonStyled};
-  ${disabledButtonStyled};
+  ${greyButtonStyled};
+  ${largeButton};
   &:focus {
     outline: 0;
   }
-  & + button,
   & + a {
     margin-left: var(--spacing-m);
   }
